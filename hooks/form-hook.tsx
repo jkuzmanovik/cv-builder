@@ -3,15 +3,27 @@ import { create } from 'zustand';
 type FormState = {
     formData: Record<string, any>;
     appendField: (field: Record<string, any>) => void;
+    appendToProfiles: (field: Record<string, any>) => void;
 };
 
 const useFormStore = create<FormState>((set) => ({
-    formData: {},
+    formData: {
+        profiles: [],
+    },
     appendField: (field) => {
         set((state) => ({
             formData: {
                 ...state.formData,
-                ...field,
+                profiles: [...(state.formData.profiles || [])],
+                field
+            },
+        }));
+    },
+    appendToProfiles: (field) => {
+        set((state) => ({
+            formData: {
+                ...state.formData,
+                profiles: [...state.formData.profiles,field],
             },
         }));
     },

@@ -37,9 +37,6 @@ const Basic = () => {
   const formStore = useFormStore();
   const stepStore = useStepStore();
 
-  useEffect(() => {
-    console.log(formStore.formData);
-  }, [formStore.formData]);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -59,7 +56,7 @@ const Basic = () => {
   });
   function onSubmit(data: z.infer<typeof formSchema>) {
     formStore.appendField(data);
-    // stepStore.increaseStep();
+    stepStore.increaseStep();
   }
 
   return (
