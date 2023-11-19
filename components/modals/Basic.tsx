@@ -14,6 +14,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import useFormStore from "@/hooks/form-hook";
+import { useEffect } from "react";
 
 const formSchema = z.object({
   name: z.string().min(3).max(20),
@@ -24,8 +26,14 @@ const formSchema = z.object({
   summary: z.string().min(3).max(100),
 });
 
-
 const Basic = () => {
+    const formStore = useFormStore();
+
+    useEffect(() => {
+        console.log("od use effect doagam")
+        console.log(formStore.formData)
+    }, [formStore.formData])
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -38,115 +46,115 @@ const Basic = () => {
     },
   });
   function onSubmit(data: z.infer<typeof formSchema>) {
-    console.log(data);
+    formStore.appendField(data);
   }
 
   return (
     //Center this div
-      <Form {...form}>
-        <h1 className="text-xl pb-5 font-medium">Basics</h1>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <div className="grid grid-cols-2 gap-3">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Name" {...field} />
-                  </FormControl>
-                  <FormDescription>
-                    This is your public display name.
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="label"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Label</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Label" {...field} />
-                  </FormControl>
-                  <FormDescription>
-                    This is your public display label.
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Email" {...field} />
-                  </FormControl>
-                  <FormDescription>
-                    This is your public display email.
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Phone</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Phone" {...field} />
-                  </FormControl>
-                  <FormDescription>
-                    This is your public display phone.
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="url"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Url</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Url" {...field} />
-                  </FormControl>
-                  <FormDescription>
-                    This is your public display url.
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="summary"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Summary</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Summary" {...field} />
-                  </FormControl>
-                  <FormDescription>
-                    This is your public display summary.
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-          <Button type="submit">Submit</Button>
-        </form>
-      </Form>
+    <Form {...form}>
+      <h1 className="text-xl pb-5 font-medium">Basics</h1>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <div className="grid grid-cols-2 gap-3">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Name</FormLabel>
+                <FormControl>
+                  <Input placeholder="Name" {...field} />
+                </FormControl>
+                <FormDescription>
+                  This is your public display name.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="label"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Label</FormLabel>
+                <FormControl>
+                  <Input placeholder="Label" {...field} />
+                </FormControl>
+                <FormDescription>
+                  This is your public display label.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Email</FormLabel>
+                <FormControl>
+                  <Input placeholder="Email" {...field} />
+                </FormControl>
+                <FormDescription>
+                  This is your public display email.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="phone"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Phone</FormLabel>
+                <FormControl>
+                  <Input placeholder="Phone" {...field} />
+                </FormControl>
+                <FormDescription>
+                  This is your public display phone.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="url"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Url</FormLabel>
+                <FormControl>
+                  <Input placeholder="Url" {...field} />
+                </FormControl>
+                <FormDescription>
+                  This is your public display url.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="summary"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Summary</FormLabel>
+                <FormControl>
+                  <Input placeholder="Summary" {...field} />
+                </FormControl>
+                <FormDescription>
+                  This is your public display summary.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        <Button type="submit">Submit</Button>
+      </form>
+    </Form>
   );
 };
 
