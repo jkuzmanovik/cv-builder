@@ -16,6 +16,8 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import useFormStore from "@/hooks/form-hook";
 import { useEffect } from "react";
+import { Textarea } from "../ui/textarea";
+import useStepStore from "@/hooks/step-hook";
 
 const formSchema = z.object({
   name: z.string().min(3).max(20),
@@ -28,10 +30,13 @@ const formSchema = z.object({
 
 const Basic = () => {
     const formStore = useFormStore();
+    const stepStore = useStepStore();
 
     useEffect(() => {
         console.log("od use effect doagam")
         console.log(formStore.formData)
+        console.log("ova ke e stepstore")
+        console.log(stepStore.currentStep)
     }, [formStore.formData])
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -47,6 +52,7 @@ const Basic = () => {
   });
   function onSubmit(data: z.infer<typeof formSchema>) {
     formStore.appendField(data);
+    stepStore.increaseStep();
   }
 
   return (
@@ -142,7 +148,7 @@ const Basic = () => {
               <FormItem>
                 <FormLabel>Summary</FormLabel>
                 <FormControl>
-                  <Input placeholder="Summary" {...field} />
+                  <Textarea placeholder="Summary" {...field} />
                 </FormControl>
                 <FormDescription>
                   This is your public display summary.
