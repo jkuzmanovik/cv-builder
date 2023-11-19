@@ -26,18 +26,20 @@ const formSchema = z.object({
   phone: z.string().min(3).max(15),
   url: z.string().url(),
   summary: z.string().min(3).max(100),
+  adress: z.string().min(3).max(100),
+  postalCode: z.string().min(3).max(100),
+  city: z.string().min(3).max(100),
+  countryCode: z.string().min(3).max(100),
+  region: z.string().min(3).max(100),
 });
 
 const Basic = () => {
-    const formStore = useFormStore();
-    const stepStore = useStepStore();
+  const formStore = useFormStore();
+  const stepStore = useStepStore();
 
-    useEffect(() => {
-        console.log("od use effect doagam")
-        console.log(formStore.formData)
-        console.log("ova ke e stepstore")
-        console.log(stepStore.currentStep)
-    }, [formStore.formData])
+  useEffect(() => {
+    console.log(formStore.formData);
+  }, [formStore.formData]);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -48,11 +50,16 @@ const Basic = () => {
       phone: "",
       url: "",
       summary: "",
+      adress: "",
+      postalCode: "",
+      city: "",
+      countryCode: "",
+      region: "",
     },
   });
   function onSubmit(data: z.infer<typeof formSchema>) {
     formStore.appendField(data);
-    stepStore.increaseStep();
+    // stepStore.increaseStep();
   }
 
   return (
@@ -158,7 +165,94 @@ const Basic = () => {
             )}
           />
         </div>
-        <Button type="submit">Submit</Button>
+        <div>
+          <h1 className="text-xl pb-5 font-medium">Location</h1>
+          <div className="grid grid-cols-2 gap-3">
+            <FormField
+              control={form.control}
+              name="adress"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Adress</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Adress" {...field} />
+                  </FormControl>
+                  <FormDescription>
+                    This is your public display adress.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="postalCode"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Postal Code</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Postal Code" {...field} />
+                  </FormControl>
+                  <FormDescription>
+                    This is your public display postal code.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="city"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>City</FormLabel>
+                  <FormControl>
+                    <Input placeholder="City" {...field} />
+                  </FormControl>
+                  <FormDescription>
+                    This is your public display city.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="countryCode"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Country Code</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Country Code" {...field} />
+                  </FormControl>
+                  <FormDescription>
+                    This is your public display country code.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="region"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Region</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Region" {...field} />
+                  </FormControl>
+                  <FormDescription>
+                    This is your public display region.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+        </div>
+        <div className="flex justify-end">
+        <Button type="submit">Next</Button>
+        </div>
       </form>
     </Form>
   );
