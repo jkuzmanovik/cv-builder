@@ -1,19 +1,21 @@
 import useFormStore from "@/hooks/form-hook"
 import { useEffect, useState } from "react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
+import useStepStore from "@/hooks/step-hook";
 
 const Work = () => {
   const formStore = useFormStore();
-  const [counter,setCounter] = useState(1);
+  const stepStore = useStepStore();
 
   useEffect(() => {
-    console.log(formStore.formData);
-  },[counter])
+    console.log(formStore.formData)
+  }, [formStore.formData])
 
   return (
     <>
-      <div>Wor2k</div>
-      <Button onClick={() => setCounter(counter + 1)}>+</Button>
+    <Button onClick={() => stepStore.increaseStep()}>Next</Button>
+    <Button onClick={() => stepStore.decreaseStep()}>Back</Button>
+      <div>Work</div>
     </>
   )
 }

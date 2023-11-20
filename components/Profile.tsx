@@ -32,7 +32,6 @@ const formSchema = z.object({
 });
 
 const Profile = ({ id, profile,setProfies }: ProfileProps) => {
-    console.log(profile)
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues:{

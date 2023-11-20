@@ -43,13 +43,12 @@ const Basic = () => {
     defaultValues: formStore.formData.basics,
   });
   function onSubmit(data: z.infer<typeof formSchema>) {
-    formStore.formData.basics = data;
+    formStore.setBasics(data);
     console.log(formStore.formData)
     stepStore.increaseStep();
   }
 
   return (
-    //Center this div
     <Form {...form}>
       <h1 className="text-xl pb-5 font-medium">Basics</h1>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">

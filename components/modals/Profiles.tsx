@@ -1,18 +1,20 @@
 'use client'
 import { useEffect, useState } from "react";
 import Profile from "../Profile"
-import { Button } from "../ui/button"
+import { Button } from "@/components/ui/button"
 import useStepStore from "@/hooks/step-hook";
 import useFormStore from "@/hooks/form-hook";
 
 const Profiles = () => {
     const formStore = useFormStore();
     const [counter, setCounter] = useState(1);
-    const [profiles,setProfies] = useState([{
+    const [profiles, setProfies] = useState([{
         network: "",
         username: "",
         url: "",
     }]);
+
+
     const stepStore = useStepStore();
     const increment = () => {
         setCounter(counter + 1);

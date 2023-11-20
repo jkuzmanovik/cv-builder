@@ -4,7 +4,7 @@ type FormState = {
     formData: {
         basics?: {};
         location?: {};
-        profiles: {};
+        profiles: [{}];
         work?: [];
         volunteer?: [];
         education?: [];
@@ -24,7 +24,11 @@ const useFormStore = create<FormState>((set) => ({
     formData: {
         basics: {},
         location: {},
-        profiles: {},
+        profiles: [{
+            network: "",
+            username: "",
+            url: "",
+        }],
         work: [],
         volunteer: [],
         education: [],
@@ -38,27 +42,22 @@ const useFormStore = create<FormState>((set) => ({
         projects: [],
         coverLetter: "",
     },
-    // Generate set functions for each field in formData
-    ...Object.keys(FormData).reduce((acc, field) => {
-        return {
-            ...acc,
-            [`set${field.charAt(0).toUpperCase()}${field.slice(1)}`]: (value: any) =>
-                set((state) => ({
-                    formData: {
-                        ...state.formData,
-                        [field]: value,
-                    },
-                })),
-        };
-    }, {}),
     setProfiles: (value: any) => 
+    set((state) => ({
+        formData: {
+            ...state.formData,
+            profiles: value,
+        },
+    })),
+    setBasics: (value: any) => 
         set((state) => ({
             formData: {
                 ...state.formData,
-                profiles:[...value]
+                basics: value,
             },
-        })),
+        }))
 }));
+
 
 export default useFormStore;
 
