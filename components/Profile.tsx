@@ -14,10 +14,16 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import useFormStore from "@/hooks/form-hook";
-import { useEffect, useState } from "react";
-import { Textarea } from "@/components/ui/textarea";
-import useStepStore from "@/hooks/step-hook";
+
+interface ProfileProps {
+  id: number;
+  profile: {
+    network: string;
+    username: string;
+    url: string;
+  };
+  setProfies: any;
+}
 
 const formSchema = z.object({
   network: z.string().min(3).max(20),
@@ -25,33 +31,28 @@ const formSchema = z.object({
   URL: z.string().url(),
 });
 
-const Profile = ({ id }: { id: number }) => {
-  const formStore = useFormStore();
-  const stepStore = useStepStore();
+const Profile = ({ id, profile,setProfies }: ProfileProps) => {
+    console.log(profile)
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      network: "",
-      username: "",
-      URL: "",
-    },
+    defaultValues:{
+      network: profile.network,
+      username: profile.username,
+      URL: profile.url
+    } 
   });
 
-  useEffect(() => {
-    return () => {
-      delete formStore.formData.profiles[id];
-    }
-  },[])
-
-  const handleChange = () => {
-    const data = form.getValues();
-    console.log(formStore.formData);
-    formStore.formData.profiles[id] = data;
+  const handleSubmit = (data: z.infer<typeof formSchema>) => {
+    setProfies((prev: any) => {
+      const newProfiles = [...prev];
+      newProfiles[id] = data;
+      return newProfiles;
+    })
   };
 
   return (
     <Form {...form}>
-      <form onChange={handleChange}>
+      <form onSubmit={form.handleSubmit(handleSubmit)}>
         <div className="grid grid-cols-2 gap-3">
           <FormField
             control={form.control}
@@ -102,6 +103,7 @@ const Profile = ({ id }: { id: number }) => {
             )}
           />
         </div>
+        <Button type="submit">Confirm</Button>
       </form>
     </Form>
   );
