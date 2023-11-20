@@ -1,8 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useFieldArray, useForm } from "react-hook-form";
-import { toast } from "@/components/ui/use-toast"
+import { useForm } from "react-hook-form";
 import * as z from "zod";
 import {
   Form,
@@ -66,8 +65,8 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
       summary: work.summary,
       //I want to join the array to string but it doesn't work it puts , between every word
       //Suggest me code that will replace the , with new line
-      highlights: (work.highlights as any).join("\n"),
-      keywords: (work.keywords as any).join("\n"),
+      highlights: work.highlights ? (work.highlights as string[]).join("\n") : "",
+      keywords: work.keywords ? (work.keywords as string[]).join("\n") : "",
     },
   });
 
