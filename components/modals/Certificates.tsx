@@ -1,7 +1,19 @@
+import useFormStore from "@/hooks/form-hook"
+import useStepStore from "@/hooks/step-hook";
+import { Button } from "../ui/button";
 
 const Certificates = () => {
+
+  const formStore = useFormStore();
+  const stepStore = useStepStore();
+  console.log(formStore.json)
+
+
   return (
-    <div>Certificates</div>
+    <>
+    <Button onClick={stepStore.increaseStep}>Next</Button>
+    <Button onClick={stepStore.decreaseStep}>Back</Button>
+    </>
   )
 }
 
