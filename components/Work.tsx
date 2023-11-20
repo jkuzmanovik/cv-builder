@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useFieldArray, useForm } from "react-hook-form";
 import { toast } from "@/components/ui/use-toast"
 import * as z from "zod";
 import {
@@ -18,8 +18,9 @@ import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
-import { CalendarIcon } from "lucide-react";
+import { CalendarIcon, Key } from "lucide-react";
 import { Calendar } from "./ui/calendar";
+import { Textarea } from "./ui/textarea";
 
 interface WorkProps {
   id: number;
@@ -69,10 +70,12 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
   });
 
   const handleSubmit = (data: z.infer<typeof formSchema>) => {
-    console.log(data);
+     let newData = data;
+     newData.keywords = data.keywords.split("\n") as any;
+     newData.highlights = data.highlights.split("\n") as any;
     setWorks((prev: any) => {
       const newWorks = [...prev];
-      newWorks[id] = data;
+      newWorks[id] = newData;
       return newWorks;
     });
   };
@@ -279,7 +282,7 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
               <FormItem>
                 <FormLabel>Highlights</FormLabel>
                 <FormControl>
-                  <Input placeholder="Highlights" {...field} />
+                    <Textarea placeholder="Type every highlight in new line" {...field} />
                 </FormControl>
                 <FormDescription>
                   This is your public display name.
@@ -295,7 +298,7 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
               <FormItem>
                 <FormLabel>Keywords</FormLabel>
                 <FormControl>
-                  <Input placeholder="Keywords" {...field} />
+                  <Textarea placeholder="Type every keyword in new line" {...field} />
                 </FormControl>
                 <FormDescription>
                   This is your public display name.
