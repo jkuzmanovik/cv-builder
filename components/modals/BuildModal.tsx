@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Basic from './Basic'
 import useStepStore from '@/hooks/step-hook';
 import Profiles from './Profiles';
-import Volunteer from './Volunteer';
+import Volunteer from './Volunteers';
 import Education from './Education';
 import Awards from './Awards';
 import Certificates from './Certificates';
@@ -81,7 +81,6 @@ const BuildModal = () => {
 
   return (
     <>
-    <h1>Ova e najjako</h1>
     {bodyContent}
     </>
   )
