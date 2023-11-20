@@ -1,3 +1,4 @@
+import { profile } from 'console';
 import { create } from 'zustand';
 type FormState = {
     formData: {
@@ -17,6 +18,7 @@ type FormState = {
         projects?: [];
         coverLetter?: string;
     }
+    setProfiles: (value: any) => void;
 }
 const useFormStore = create<FormState>((set) => ({
     formData: {
@@ -49,6 +51,13 @@ const useFormStore = create<FormState>((set) => ({
                 })),
         };
     }, {}),
+    setProfiles: (value: any) => 
+        set((state) => ({
+            formData: {
+                ...state.formData,
+                profiles:[...value]
+            },
+        })),
 }));
 
 export default useFormStore;

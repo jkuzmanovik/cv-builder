@@ -6,7 +6,7 @@ import useStepStore from "@/hooks/step-hook";
 import useFormStore from "@/hooks/form-hook";
 
 const Profiles = () => {
-
+    const formStore = useFormStore();
     const [counter, setCounter] = useState(1);
     const [profiles,setProfies] = useState([{
         network: "",
@@ -14,7 +14,6 @@ const Profiles = () => {
         url: "",
     }]);
     const stepStore = useStepStore();
-
     const increment = () => {
         setCounter(counter + 1);
         setProfies([...profiles,{
@@ -28,6 +27,7 @@ const Profiles = () => {
         setProfies(profiles.slice(0, -1))
     }
     const handleNext = () => {
+        formStore.setProfiles(profiles);
         stepStore.increaseStep();
     }
     const handleBack = () => {
