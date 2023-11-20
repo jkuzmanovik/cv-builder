@@ -24,7 +24,7 @@ type StepState = {
 };
 
 const useStepStore = create<StepState>((set) => ({
-    currentStep: STEPS.PUBLICATIONS,
+    currentStep: STEPS.LANGUAGES,
     increaseStep: () => set((state) => ({ currentStep: state.currentStep + 1 })),
     decreaseStep: () => set((state) => ({ currentStep: state.currentStep - 1 })),
 }));
