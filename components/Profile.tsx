@@ -26,7 +26,7 @@ const formSchema = z.object({
   URL: z.string().url(),
 });
 
-const Profile = ({formRef} : {formRef:any}) => {
+const Profile = () => {
     const formStore = useFormStore();
     const stepStore = useStepStore();
     const form = useForm<z.infer<typeof formSchema>>({
@@ -37,16 +37,16 @@ const Profile = ({formRef} : {formRef:any}) => {
       URL: "",
     },
     });
- function onSubmit(data: z.infer<typeof formSchema>) {
-    console.log("i am called from {ref}")
-//     formStore.appendField(data);
-//     stepStore.increaseStep();
-   }
-  
 
-  return (
+    const onSubmit = (data: z.infer<typeof formSchema>) => {
+      console.log("jas sum preku ref")
+      console.log(data)
+      console.log("zavrsuvam od ref")
+    }
+
+    return (
     <Form {...form}>
-      <form ref={formRef} onSubmit={form.handleSubmit(onSubmit)}>
+      <form>
         <div className="grid grid-cols-2 gap-3">
          <FormField
             control={form.control}
@@ -97,6 +97,7 @@ const Profile = ({formRef} : {formRef:any}) => {
             )}
           />
           </div>
+          
       </form>
     </Form>
   )

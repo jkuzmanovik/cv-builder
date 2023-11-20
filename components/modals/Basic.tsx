@@ -40,22 +40,11 @@ const Basic = () => {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      label: "",
-      email: "",
-      phone: "",
-      url: "",
-      summary: "",
-      adress: "",
-      postalCode: "",
-      city: "",
-      countryCode: "",
-      region: "",
-    },
+    defaultValues: formStore.formData.basics,
   });
   function onSubmit(data: z.infer<typeof formSchema>) {
-    formStore.appendField(data);
+    formStore.formData.basics = data;
+    console.log(formStore.formData)
     stepStore.increaseStep();
   }
 

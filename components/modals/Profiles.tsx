@@ -8,22 +8,15 @@ import useStepStore from "@/hooks/step-hook";
 
 const Profiles = () => {
     const [counter, setCounter] = useState(1);
-    const [submit,setSubmit] = useState(false);
-
-    const formRef1 = useRef();
-    const formRef2 = useRef();
-
-
     const stepStore = useStepStore();
-
-    useEffect(() => {
-        console.log("i am changing")
-    },[submit])
+    const submitRef = useRef();
 
 
-    const submitData = () => {
-        setSubmit(true);
+    const handleNext = () => {
         stepStore.increaseStep();
+    }
+    const handleBack = () => {
+        stepStore.decreaseStep();
     }
 
     const increment = () => {
@@ -38,10 +31,11 @@ const Profiles = () => {
     <h1 className="text-xl pb-5 font-medium">Profiles</h1>
 
     {Array.from(Array(counter), (e, i) => {
-        return <Profile  key={i} />
+        return <Profile key={i} />
     } )}
-        <div className="flex justify-end">
-            <Button onClick={submitData}>Submit</Button>
+        <div className="flex justify-end gap-2">
+            <Button onClick={handleBack}>Back</Button>
+            <Button onClick={handleNext}>Next</Button>
         </div>
     <div className="flex gap-2">
         <Button onClick={increment}> +Profile </Button>
