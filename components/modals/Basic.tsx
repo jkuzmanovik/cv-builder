@@ -15,7 +15,6 @@ import {
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import useFormStore from "@/hooks/form-hook";
-import { useEffect } from "react";
 import { Textarea } from "../ui/textarea";
 import useStepStore from "@/hooks/step-hook";
 
@@ -37,10 +36,21 @@ const Basic = () => {
   const formStore = useFormStore();
   const stepStore = useStepStore();
 
-
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: formStore.json.basics?formStore.json.basics:{},
+    defaultValues: formStore.json.basics?formStore.json.basics:{
+        name: "",
+        label: "",
+        email: "",
+        phone: "",
+        url: "",
+        summary: "",
+        adress: "",
+        postalCode: "",
+        city: "",
+        countryCode: "",
+        region: "",
+    },
   });
   function onSubmit(data: z.infer<typeof formSchema>) {
     formStore.addField("basics", data);
@@ -123,7 +133,7 @@ const Basic = () => {
               <FormItem>
                 <FormLabel>Url</FormLabel>
                 <FormControl>
-                  <Input placeholder="Url" {...field} />
+                  <Input placeholder="url" {...field} />
                 </FormControl>
                 <FormDescription>
                   This is your public display url.
