@@ -64,8 +64,10 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
       startDate: work.startDate,
       endDate: work.endDate,
       summary: work.summary,
-      highlights: work.highlights,
-      keywords: work.keywords,
+      //I want to join the array to string but it doesn't work it puts , between every word
+      //Suggest me code that will replace the , with new line
+      highlights: (work.highlights as any).join("\n"),
+      keywords: (work.keywords as any).join("\n"),
     },
   });
 
