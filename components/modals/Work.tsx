@@ -8,8 +8,8 @@ const Work = () => {
   const stepStore = useStepStore();
 
   useEffect(() => {
-    console.log(formStore.formData)
-  }, [formStore.formData])
+    console.log(formStore)
+  }, [formStore])
 
   return (
     <>

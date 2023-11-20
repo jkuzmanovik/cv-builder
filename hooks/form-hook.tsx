@@ -1,66 +1,24 @@
-import { profile } from 'console';
 import { create } from 'zustand';
-type FormState = {
-    formData: {
-        basics?: {};
-        location?: {};
-        profiles: [{}];
-        work?: [];
-        volunteer?: [];
-        education?: [];
-        awards?: [];
-        certificates?: [];
-        publications?: [];
-        skills?: [];
-        languages?: [];
-        interests?: [];
-        references?: [];
-        projects?: [];
-        coverLetter?: string;
-    }
-    setProfiles: (value: any) => void;
-}
-const useFormStore = create<FormState>((set) => ({
-    formData: {
-        basics: {},
-        location: {},
-        profiles: [{
-            network: "",
-            username: "",
-            url: "",
-        }],
-        work: [],
-        volunteer: [],
-        education: [],
-        awards: [],
-        certificates: [],
-        publications: [],
-        skills: [],
-        languages: [],
-        interests: [],
-        references: [],
-        projects: [],
-        coverLetter: "",
-    },
-    setProfiles: (value: any) => 
-    set((state) => ({
-        formData: {
-            ...state.formData,
-            profiles: value,
-        },
-    })),
-    setBasics: (value: any) => 
+
+type FormStore = {
+    json: Record<string, any>;
+    addField: (key: string, value: any) => void;
+};
+
+const useFormStore = create<FormStore>((set) => ({
+    json: {},
+    addField: (key, value) => {
         set((state) => ({
-            formData: {
-                ...state.formData,
-                basics: value,
+            json: {
+                ...state.json,
+                [key]: value,
             },
-        }))
+        }));
+    },
 }));
 
 
 export default useFormStore;
-
 
 
 

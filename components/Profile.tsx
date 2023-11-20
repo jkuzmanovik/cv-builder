@@ -28,7 +28,7 @@ interface ProfileProps {
 const formSchema = z.object({
   network: z.string().min(3).max(20),
   username: z.string().min(3).max(20),
-  URL: z.string().url(),
+  url: z.string(),
 });
 
 const Profile = ({ id, profile,setProfies }: ProfileProps) => {
@@ -37,7 +37,7 @@ const Profile = ({ id, profile,setProfies }: ProfileProps) => {
     defaultValues:{
       network: profile.network,
       username: profile.username,
-      URL: profile.url
+      url: profile.url
     } 
   });
 
@@ -87,12 +87,12 @@ const Profile = ({ id, profile,setProfies }: ProfileProps) => {
           />
           <FormField
             control={form.control}
-            name="URL"
+            name="url"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>URL</FormLabel>
                 <FormControl>
-                  <Input placeholder="URL" {...field} />
+                  <Input placeholder="url" {...field} />
                 </FormControl>
                 <FormDescription>
                   This is your public display name.

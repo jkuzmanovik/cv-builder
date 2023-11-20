@@ -7,13 +7,12 @@ import useFormStore from "@/hooks/form-hook";
 
 const Profiles = () => {
     const formStore = useFormStore();
-    const [counter, setCounter] = useState(1);
-    const [profiles, setProfies] = useState([{
+    const [counter, setCounter] = useState(formStore.json.profiles?formStore.json.profiles.length:1);
+    const [profiles, setProfies] =  useState(formStore.json.profiles?formStore.json.profiles:[{
         network: "",
         username: "",
         url: "",
     }]);
-
 
     const stepStore = useStepStore();
     const increment = () => {
@@ -29,7 +28,7 @@ const Profiles = () => {
         setProfies(profiles.slice(0, -1))
     }
     const handleNext = () => {
-        formStore.setProfiles(profiles);
+        formStore.addField("profiles", profiles);
         stepStore.increaseStep();
     }
     const handleBack = () => {
@@ -38,7 +37,7 @@ const Profiles = () => {
   return (
     <>
     <h1 className="text-xl pb-5 font-medium">Profiles</h1>
-    {profiles.map((profile, index) => (
+    {profiles.map((profile : any, index: any) => (
                 <Profile key={index} id={index} profile = {profile} setProfies={setProfies} />
             ))} 
         <div className="flex justify-end gap-2">
