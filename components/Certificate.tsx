@@ -20,63 +20,62 @@ import { CalendarIcon } from "lucide-react";
 import { Calendar } from "./ui/calendar";
 import { Textarea } from "./ui/textarea";
 
-interface AwardProps {
-  id: number;
-  award: {
-    title: string;
-    date: Date;
-    awarder: string;
-    summary: string;
-  };
-  setAwards: (award: any) => void;
-}
+interface CertificateProps {
+    id: number;
+    certificate: {
+        name: string;
+        date: Date;
+        url: string;
+        issuer: string;
+    };
+    setCertificates: (certificate: any) => void;
+    }
 
-const formSchema = z.object({
-  title: z.string().min(3).max(20),
-  date: z.date(),
-  awarder: z.string().min(3).max(20),
-  summary: z.string(),
-});
-
-const Award = ({ id, award, setAwards }: AwardProps) => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      title: award.title,
-      date: award.date,
-      awarder: award.awarder,
-      summary: award.summary,
-    },
-  });
-
-  const handleSubmit = (data: z.infer<typeof formSchema>) => {
-    let newData = data;
-    setAwards((prev: any) => {
-      const newAwards = [...prev];
-      newAwards[id] = data;
-      return newAwards;
+    const formSchema = z.object({
+        name: z.string().min(3).max(20),
+        date: z.date(),
+        url: z.string().url(),
+        issuer: z.string().min(3).max(20),
     });
-  };
+
+
+    const Certificate = ({ id, certificate, setCertificates }: CertificateProps) => {
+        const form= useForm<z.infer<typeof formSchema>>({
+            resolver: zodResolver(formSchema),
+            defaultValues: {
+                name: certificate.name,
+                date: certificate.date,
+                url: certificate.url,
+                issuer: certificate.issuer,
+            },
+        });
+
+        const handleSubmit = (data: z.infer<typeof formSchema>) => {
+            let newData = data;
+            setCertificates((prev: any) => {
+                const newCertificates = [...prev];
+                newCertificates[id] = data;
+                return newCertificates;
+            });
+        }
   return (
     <>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(handleSubmit)}>
+    <Form {...form}>
+        <form onSubmit={form.handleSubmit(handleSubmit)} >
           <div className="grid grid-cols-2 gap-3">
-
-          <FormField
+             <FormField
               control={form.control}
-              name="title"
+              name="name"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Institution</FormLabel>
                   <Input {...field} />
                   <FormMessage>
-                    {form.formState.errors.title?.message}
+                    {form.formState.errors.name?.message}
                   </FormMessage>
                 </FormItem>
               )}
             />
-
          <FormField
           control={form.control}
           name="date"
@@ -121,41 +120,39 @@ const Award = ({ id, award, setAwards }: AwardProps) => {
             </FormItem>
           )}
         />
-            <FormField
+
+             <FormField
               control={form.control}
-              name="awarder"
+              name="url"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>url</FormLabel>
+                  <Input {...field} />
+                  <FormMessage>
+                    {form.formState.errors.url?.message}
+                  </FormMessage>
+                </FormItem>
+              )}
+            />
+             <FormField
+              control={form.control}
+              name="issuer"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Institution</FormLabel>
                   <Input {...field} />
                   <FormMessage>
-                    {form.formState.errors.awarder?.message}
+                    {form.formState.errors.issuer?.message}
                   </FormMessage>
                 </FormItem>
               )}
             />
-
-
-            <FormField
-              control={form.control}
-              name="summary"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Institution</FormLabel>
-                  <Textarea {...field} />
-                  <FormMessage>
-                    {form.formState.errors.summary?.message}
-                  </FormMessage>
-                </FormItem>
-              )}
-            />
-
           </div>
-          <Button type="submit">Submit</Button>
+          <Button type='submit'>Submit</Button>
         </form>
-      </Form>
+        </Form>
     </>
-  );
-};
+  )
+}
 
-export default Award;
+export default Certificate
