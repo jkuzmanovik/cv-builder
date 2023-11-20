@@ -1,69 +1,72 @@
 import useFormStore from "@/hooks/form-hook";
-import { useState } from "react";
 import useStepStore from "@/hooks/step-hook";
+import { useState } from "react";
+import Education from "../Education";
 import { Button } from "../ui/button";
-import Volunteer from "../Volunteer";
-const Volunteers = () => {
+
+const Educations = () => {
   const formStore = useFormStore();
   const [counter, setCounter] = useState(
-    formStore.json.volunteers ? formStore.json.volunteers.length : 1
+    formStore.json.educations ? formStore.json.educations.length : 1
   );
   const stepStore = useStepStore();
-  const [volunteers, setVolunteers] = useState(
-    formStore.json.volunteers
-      ? formStore.json.volunteers
+  const [educations, setEducations] = useState(
+    formStore.json.educations
+      ? formStore.json.educations
       : [
           {
-            organization: "",
-            position: "",
+            institution: "",
             url: "",
+            area: "",
+            studyType: String,
             startDate: new Date(),
             endDate: new Date(),
-            summary: "",
-            highlights: "",
+            score: "",
+            courses: "",
           },
         ]
   );
 
   const increment = () => {
     setCounter(counter + 1);
-    setVolunteers([
-      ...volunteers,
+    setEducations([
+      ...educations,
       {
-        organization: "",
-        position: "",
+        institution: "",
         url: "",
+        area: "",
+        studyType: String,
         startDate: new Date(),
         endDate: new Date(),
-        summary: "",
-        highlights: "",
+        score: "",
+        courses: "",
       },
     ]);
-  };
+  }
 
   const decrement = () => {
     setCounter(counter - 1);
-    setVolunteers(volunteers.slice(0, -1));
-  };
-
+    setEducations(educations.slice(0, -1));
+  }
   const handleNext = () => {
-    formStore.addField("volunteers", volunteers);
+    formStore.addField("educations", educations);
     stepStore.increaseStep();
-  };
+  }
+
   const handleBack = () => {
     stepStore.decreaseStep();
-  };
+  }
 
   return (
     <>
       <h1 className="text-xl pb-5 font-medium">Volunteers</h1>
-      {volunteers.map((volunteer: any, index: any) => (
-        <Volunteer
+      {educations.map((education:any, index:any) => (
+        <Education
           key={index}
-          volunteer={volunteer}
-          setVolunteers={setVolunteers}
           id={index}
-        />
+          education={education}
+          setEducations={setEducations}
+          />
       ))}
       <div className="flex justify-end gap-2">
         <Button onClick={handleBack}>Back</Button>
@@ -77,4 +80,4 @@ const Volunteers = () => {
   );
 };
 
-export default Volunteers;
+export default Educations;

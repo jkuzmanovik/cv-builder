@@ -5,7 +5,7 @@ import Basic from './Basic'
 import useStepStore from '@/hooks/step-hook';
 import Profiles from './Profiles';
 import Volunteer from './Volunteers';
-import Education from './Education';
+import Education from './Educations';
 import Awards from './Awards';
 import Certificates from './Certificates';
 import Publications from './Publications';
