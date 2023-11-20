@@ -4,7 +4,6 @@ import React, { useState } from 'react'
 import Basic from './Basic'
 import useStepStore from '@/hooks/step-hook';
 import Profiles from './Profiles';
-import Work from './Work';
 import Volunteer from './Volunteer';
 import Education from './Education';
 import Awards from './Awards';
@@ -16,6 +15,7 @@ import Interests from './Interests';
 import References from './References';
 import Projects from './Projects';
 import CoverLetter from './CoverLetter';
+import Works from './Works';
 enum STEPS {
   BASICS = 0,
   PROFILES = 1,
@@ -42,7 +42,7 @@ const BuildModal = () => {
         bodyContent = <Profiles />
     }
     if(stepStore.currentStep === STEPS.WORK) {
-        bodyContent = <Work />
+        bodyContent = <Works />
     }
     if(stepStore.currentStep === STEPS.VOLUNTEER) {
         bodyContent = <Volunteer />
