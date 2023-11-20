@@ -3,7 +3,7 @@ type FormState = {
     formData: {
         basics?: {};
         location?: {};
-        profiles?: [];
+        profiles: {};
         work?: [];
         volunteer?: [];
         education?: [];
@@ -22,7 +22,7 @@ const useFormStore = create<FormState>((set) => ({
     formData: {
         basics: {},
         location: {},
-        profiles: [],
+        profiles: {},
         work: [],
         volunteer: [],
         education: [],

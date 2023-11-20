@@ -19,36 +19,41 @@ import { useEffect, useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import useStepStore from "@/hooks/step-hook";
 
-
 const formSchema = z.object({
   network: z.string().min(3).max(20),
   username: z.string().min(3).max(20),
   URL: z.string().url(),
 });
 
-const Profile = () => {
-    const formStore = useFormStore();
-    const stepStore = useStepStore();
-    const form = useForm<z.infer<typeof formSchema>>({
+const Profile = ({ id }: { id: number }) => {
+  const formStore = useFormStore();
+  const stepStore = useStepStore();
+  const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       network: "",
       username: "",
       URL: "",
     },
-    });
+  });
 
-    const onSubmit = (data: z.infer<typeof formSchema>) => {
-      console.log("jas sum preku ref")
-      console.log(data)
-      console.log("zavrsuvam od ref")
+  useEffect(() => {
+    return () => {
+      delete formStore.formData.profiles[id];
     }
+  },[])
 
-    return (
+  const handleChange = () => {
+    const data = form.getValues();
+    console.log(formStore.formData);
+    formStore.formData.profiles[id] = data;
+  };
+
+  return (
     <Form {...form}>
-      <form>
+      <form onChange={handleChange}>
         <div className="grid grid-cols-2 gap-3">
-         <FormField
+          <FormField
             control={form.control}
             name="network"
             render={({ field }) => (
@@ -64,7 +69,7 @@ const Profile = () => {
               </FormItem>
             )}
           />
-          <FormField 
+          <FormField
             control={form.control}
             name="username"
             render={({ field }) => (
@@ -96,11 +101,10 @@ const Profile = () => {
               </FormItem>
             )}
           />
-          </div>
-          
+        </div>
       </form>
     </Form>
-  )
+  );
 };
 
 export default Profile;

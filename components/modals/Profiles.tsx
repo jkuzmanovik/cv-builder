@@ -31,7 +31,7 @@ const Profiles = () => {
     <h1 className="text-xl pb-5 font-medium">Profiles</h1>
 
     {Array.from(Array(counter), (e, i) => {
-        return <Profile key={i} />
+        return <Profile key={i} id={i} />
     } )}
         <div className="flex justify-end gap-2">
             <Button onClick={handleBack}>Back</Button>
