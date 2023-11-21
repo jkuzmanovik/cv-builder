@@ -38,7 +38,19 @@ const Basic = () => {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: formStore.json.basics?formStore.json.basics:{
+    defaultValues: formStore.json.basics?{
+      name: formStore.json.basics.name,
+      label: formStore.json.basics.label,
+      email: formStore.json.basics.email,
+      phone: formStore.json.basics.phone,
+      url: formStore.json.basics.url,
+      summary: formStore.json.basics.summary,
+      adress: formStore.json.basics.location.adress,
+      postalCode: formStore.json.basics.location.postalCode,
+      city: formStore.json.basics.location.city,
+      countryCode: formStore.json.basics.location.countryCode,
+      region: formStore.json.basics.location.region,
+    }:{
         name: "",
         label: "",
         email: "",
@@ -53,7 +65,22 @@ const Basic = () => {
     },
   });
   function onSubmit(data: z.infer<typeof formSchema>) {
-    formStore.addField("basics", data);
+    const newData = {
+      name:data.name,
+      label:data.label,
+      email:data.email,
+      phone:data.phone,
+      url:data.url,
+      summary:data.summary,
+      location:{
+        adress:data.adress,
+        postalCode:data.postalCode,
+        city:data.city,
+        countryCode:data.countryCode,
+        region:data.region,
+      }
+    }
+    formStore.addField("basics", newData);
   }
   const handleNext = () => {
     stepStore.increaseStep();

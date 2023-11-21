@@ -15,6 +15,7 @@ enum STEPS {
     REFERENCES = 11,
     PROJECTS = 12,
     COVERLETTER = 13,
+    BUILD = 14,
 }
 
 type StepState = {

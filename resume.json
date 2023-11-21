@@ -1,0 +1,161 @@
+
+  {
+    "basics": {
+        "name": "Jordan Kuzmanovikj",
+        "label": "This is my label",
+        "email": "jordan.kuzmanovik@gmail.com",
+        "phone": "075404253",
+        "url": "https://www.majonidiamonds.com/",
+        "summary": "Ova e kratok summary za mene",
+        "adress": "Dimitar Makedonski broj 2",
+        "postalCode": "1000",
+        "city": "Skopje",
+        "countryCode": "North Macedonia",
+        "region": "Skopje"
+    },
+    "profiles": [
+        {
+            "network": "facebook",
+            "username": "jkuzmanovik",
+            "url": "https://www.facebook.com/"
+        }
+    ],
+    "works": [
+        {
+            "name": "Majoni Diamonds",
+            "location": "Gtc zlatarska ulica",
+            "description": "Zlatar",
+            "position": "Menadzer",
+            "url": "https://www.majonidiamonds.com/",
+            "startDate": "2023-11-13T23:00:00.000Z",
+            "endDate": "2023-11-19T23:00:00.000Z",
+            "summary": "Rabotev kakok glaven",
+            "highlights": [
+                "Mnogu",
+                "pari"
+            ],
+            "keywords": [
+                "se",
+                "pravea"
+            ]
+        }
+    ],
+    "volunteers": [
+        {
+            "organization": "Organizacija",
+            "position": "Pozicija",
+            "url": "https://www.majonidiamonds.com/",
+            "startDate": "2023-11-21T17:32:19.709Z",
+            "endDate": "2023-11-21T17:32:19.709Z",
+            "summary": "Kratok summary",
+            "highlights": [
+                "ova",
+                "e",
+                "higlight"
+            ]
+        }
+    ],
+    "educations": [
+        {
+            "institution": "Edukacija",
+            "url": "https://www.majonidiamonds.com/",
+            "area": "Kompjuteri",
+            "studyType": "Fakultet",
+            "startDate": "2023-11-21T17:32:41.064Z",
+            "endDate": "2023-11-21T17:32:41.064Z",
+            "score": "10",
+            "courses": [
+                "diskretna",
+                "programiranje"
+            ]
+        }
+    ],
+    "awards": [
+        {
+            "title": "HRD EDUCATION",
+            "date": "2023-11-21T17:32:56.845Z",
+            "awarder": "DIPLOMIRAN",
+            "summary": "Kratok summary"
+        }
+    ],
+    "certificates": [
+        {
+            "name": "JOCO sertifikat",
+            "date": "2023-10-31T23:00:00.000Z",
+            "url": "https://www.majonidiamonds.com/",
+            "issuer": "HRD"
+        }
+    ],
+    "publications": [
+        {
+            "name": "Publukacija",
+            "publisher": "Publusher",
+            "releaseDate": "2023-11-21T17:33:24.496Z",
+            "url": "https://www.majonidiamonds.com/",
+            "summary": "Ova e sto taka"
+        }
+    ],
+    "skills": [
+        {
+            "name": "Skilovi",
+            "level": "Leveli",
+            "keywords": [
+                "se"
+            ]
+        }
+    ],
+    "languages": [
+        {
+            "language": "makedonski",
+            "fluency": "najjak"
+        },
+        {
+            "language": "use eden",
+            "fluency": "use pojak"
+        }
+    ],
+    "interests": [
+        {
+            "name": "Interest",
+            "keywords": [
+                "ova",
+                "e",
+                "interest"
+            ]
+        }
+    ],
+    "references": [
+        {
+            "name": "referenca",
+            "reference": "ova e referenca"
+        }
+    ],
+    "projects": [
+        {
+            "name": "Project name",
+            "description": "description",
+            "highlights": [
+                "ova e ",
+                "higlight"
+            ],
+            "keywords": [
+                "ova",
+                "e",
+                "keywords",
+                ""
+            ],
+            "startDate": "2023-11-14T23:00:00.000Z",
+            "endDate": "2023-11-15T23:00:00.000Z",
+            "url": "https://www.majonidiamonds.com/",
+            "roles": [
+                "programer",
+                "menadzer"
+            ],
+            "entity": "entity",
+            "type": "tip"
+        }
+    ],
+    "coverLetter": {
+        "coverLetter": "Ova ke e posledniot covver letter\n"
+    }
+  }

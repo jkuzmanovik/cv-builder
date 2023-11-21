@@ -33,6 +33,10 @@ const CoverLetter = () => {
     formStore.addField("coverLetter", data);
   };
 
+  const handleBuild = () => {
+    stepStore.increaseStep();
+  }
+
   const handleBack = () => {
     stepStore.decreaseStep();
   };
@@ -65,6 +69,7 @@ const CoverLetter = () => {
           </div>
         </form>
       </Form>
+      <Button onClick={handleBuild}>Build</Button>
       <Button onClick={handleBack}>Back</Button>
     </>
   );

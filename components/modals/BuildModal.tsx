@@ -16,6 +16,7 @@ import References from './References';
 import Projects from './Projects';
 import CoverLetter from './CoverLetter';
 import Works from './Works';
+import Build from './Build';
 enum STEPS {
   BASICS = 0,
   PROFILES = 1,
@@ -31,6 +32,7 @@ enum STEPS {
   REFERENCES = 11,
   PROJECTS = 12,
   COVERLETTER = 13,
+  BUILD = 14,
 }
 const BuildModal = () => {
     const stepStore = useStepStore();
@@ -76,6 +78,9 @@ const BuildModal = () => {
     }
     if(stepStore.currentStep === STEPS.COVERLETTER) {
         bodyContent = <CoverLetter />
+    }
+    if(stepStore.currentStep === STEPS.BUILD) {
+        bodyContent = <Build />
     }
 
 
