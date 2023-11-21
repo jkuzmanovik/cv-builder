@@ -68,8 +68,8 @@ interface CertificateProps {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Institution</FormLabel>
-                  <Input {...field} />
+                  <FormLabel>Name</FormLabel>
+                  <Input {...field} placeholder="URL" />
                   <FormMessage>
                     {form.formState.errors.name?.message}
                   </FormMessage>
@@ -113,9 +113,6 @@ interface CertificateProps {
                   />
                 </PopoverContent>
               </Popover>
-              <FormDescription>
-                Your date of birth is used to calculate your age.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -126,8 +123,8 @@ interface CertificateProps {
               name="url"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>url</FormLabel>
-                  <Input {...field} />
+                  <FormLabel>URL</FormLabel>
+                  <Input {...field} placeholder="URL" />
                   <FormMessage>
                     {form.formState.errors.url?.message}
                   </FormMessage>
@@ -139,8 +136,8 @@ interface CertificateProps {
               name="issuer"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Institution</FormLabel>
-                  <Input {...field} />
+                  <FormLabel>Issuer</FormLabel>
+                  <Input {...field} placeholder="Issuer" />
                   <FormMessage>
                     {form.formState.errors.issuer?.message}
                   </FormMessage>
@@ -148,7 +145,7 @@ interface CertificateProps {
               )}
             />
           </div>
-          <Button type='submit'>Submit</Button>
+          <Button type='submit' className="mt-2">Submit</Button>
         </form>
         </Form>
     </>

@@ -69,7 +69,7 @@ const Skill = ({ id, skill, setSkills }: SkillProps) => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Name</FormLabel>
-                  <Input {...field} />
+                  <Input {...field} placeholder="Name" />
                   <FormMessage>
                     {form.formState.errors.name?.message}
                   </FormMessage>
@@ -81,8 +81,8 @@ const Skill = ({ id, skill, setSkills }: SkillProps) => {
               name="level"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Institution</FormLabel>
-                  <Input {...field} />
+                  <FormLabel>Level</FormLabel>
+                  <Input {...field} placeholder="Level" />
                   <FormMessage>
                     {form.formState.errors.level?.message}
                   </FormMessage>
@@ -95,7 +95,7 @@ const Skill = ({ id, skill, setSkills }: SkillProps) => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Keywords</FormLabel>
-                  <Textarea {...field} placeholder="Type keywords with space" />
+                  <Textarea {...field} placeholder="Type every keywords in new line" />
                   <FormMessage>
                     {form.formState.errors.keywords?.message}
                   </FormMessage>
@@ -103,7 +103,7 @@ const Skill = ({ id, skill, setSkills }: SkillProps) => {
               )}
             />
           </div>
-          <Button type="submit" className="m-3">Submit</Button>
+          <Button type="submit" className="mt-3">Submit</Button>
         </form>
       </Form>
     </>

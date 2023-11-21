@@ -52,7 +52,7 @@ const Skills = () => {
 
   return (
     <>
-      <h1 className="text-xl pb-5 font-medium">Volunteers</h1>
+      <h1 className="text-xl pb-5 font-medium">Skills</h1>
       {skills.map((skill:any, index:any) => (
         <Skill
           key={index}
@@ -66,8 +66,8 @@ const Skills = () => {
         <Button onClick={handleNext}>Next</Button>
       </div>
       <div className="flex gap-2">
-        <Button onClick={increment}> +Volunteer </Button>
-        {counter > 1 && <Button onClick={decrement}> -Volunteer </Button>}
+        <Button onClick={increment}> + Skills </Button>
+        {counter > 1 && <Button onClick={decrement}> - Skills </Button>}
       </div>
     </>
   )

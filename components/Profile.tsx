@@ -6,7 +6,6 @@ import * as z from "zod";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -58,13 +57,10 @@ const Profile = ({ id, profile,setProfies }: ProfileProps) => {
             name="network"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>Network</FormLabel>
                 <FormControl>
-                  <Input placeholder="Name" {...field} />
+                  <Input placeholder="Network" {...field} />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -78,9 +74,6 @@ const Profile = ({ id, profile,setProfies }: ProfileProps) => {
                 <FormControl>
                   <Input placeholder="Username" {...field} />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -92,17 +85,14 @@ const Profile = ({ id, profile,setProfies }: ProfileProps) => {
               <FormItem>
                 <FormLabel>URL</FormLabel>
                 <FormControl>
-                  <Input placeholder="url" {...field} />
+                  <Input placeholder="URL" {...field} />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
         </div>
-        <Button type="submit">Confirm</Button>
+        <Button type="submit" className="mt-2 ">Confirm</Button>
       </form>
     </Form>
   );

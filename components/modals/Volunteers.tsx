@@ -56,7 +56,7 @@ const Volunteers = () => {
 
   return (
     <>
-      <h1 className="text-xl pb-5 font-medium">Volunteers</h1>
+      <h1 className="text-xl pb-5 font-medium">Volunteer</h1>
       {volunteers.map((volunteer: any, index: any) => (
         <Volunteer
           key={index}
@@ -70,8 +70,8 @@ const Volunteers = () => {
         <Button onClick={handleNext}>Next</Button>
       </div>
       <div className="flex gap-2">
-        <Button onClick={increment}> +Volunteer </Button>
-        {counter > 1 && <Button onClick={decrement}> -Volunteer </Button>}
+        <Button onClick={increment}> + Volunteer </Button>
+        {counter > 1 && <Button onClick={decrement}> - Volunteer </Button>}
       </div>
     </>
   );

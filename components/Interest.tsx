@@ -70,7 +70,7 @@ const Interest = ({ id, interest, setInterests }: InterestProps) => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Name</FormLabel>
-                  <Input {...field} />
+                  <Input {...field} placeholder="Name" />
                   <FormMessage>
                     {form.formState.errors.name?.message}
                   </FormMessage>
@@ -83,7 +83,7 @@ const Interest = ({ id, interest, setInterests }: InterestProps) => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Keywords</FormLabel>
-                  <Textarea {...field} placeholder="Type word by word" />
+                  <Textarea {...field} placeholder="Type every keyword line by line" />
                   <FormMessage>
                     {form.formState.errors.keywords?.message}
                   </FormMessage>
@@ -92,7 +92,7 @@ const Interest = ({ id, interest, setInterests }: InterestProps) => {
             />
 
           </div>
-          <Button type="submit">Submit</Button>
+          <Button type="submit" className="mt-2">Submit</Button>
                 </form>
         </Form>
     </>

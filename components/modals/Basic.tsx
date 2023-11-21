@@ -19,12 +19,12 @@ import { Textarea } from "../ui/textarea";
 import useStepStore from "@/hooks/step-hook";
 
 const formSchema = z.object({
-  name: z.string().min(3).max(20),
-  label: z.string().min(3).max(20),
+  name: z.string(),
+  label: z.string(),
   email: z.string().email(),
   phone: z.string().min(3).max(15),
   url: z.string().url(),
-  summary: z.string().min(3).max(100),
+  summary: z.string().min(3).max(200),
   adress: z.string().min(3).max(100),
   postalCode: z.string().min(3).max(100),
   city: z.string().min(3).max(100),
@@ -54,6 +54,8 @@ const Basic = () => {
   });
   function onSubmit(data: z.infer<typeof formSchema>) {
     formStore.addField("basics", data);
+  }
+  const handleNext = () => {
     stepStore.increaseStep();
   }
 
@@ -69,11 +71,8 @@ const Basic = () => {
               <FormItem>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Name" {...field} />
+                  <Input placeholder="Name and Surname" {...field} />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -87,9 +86,6 @@ const Basic = () => {
                 <FormControl>
                   <Input placeholder="Label" {...field} />
                 </FormControl>
-                <FormDescription>
-                  This is your public display label.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -101,11 +97,8 @@ const Basic = () => {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="Email" {...field} />
+                  <Input placeholder="Type your email"  {...field} />
                 </FormControl>
-                <FormDescription>
-                  This is your public display email.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -117,11 +110,8 @@ const Basic = () => {
               <FormItem>
                 <FormLabel>Phone</FormLabel>
                 <FormControl>
-                  <Input placeholder="Phone" {...field} />
+                  <Input placeholder="Type your phone" {...field} />
                 </FormControl>
-                <FormDescription>
-                  This is your public display phone.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -133,11 +123,8 @@ const Basic = () => {
               <FormItem>
                 <FormLabel>Url</FormLabel>
                 <FormControl>
-                  <Input placeholder="url" {...field} />
+                  <Input placeholder="Url" {...field} />
                 </FormControl>
-                <FormDescription>
-                  This is your public display url.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -152,7 +139,7 @@ const Basic = () => {
                   <Textarea placeholder="Summary" {...field} />
                 </FormControl>
                 <FormDescription>
-                  This is your public display summary.
+                  Write brief summary
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -171,9 +158,6 @@ const Basic = () => {
                   <FormControl>
                     <Input placeholder="Adress" {...field} />
                   </FormControl>
-                  <FormDescription>
-                    This is your public display adress.
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -187,9 +171,6 @@ const Basic = () => {
                   <FormControl>
                     <Input placeholder="Postal Code" {...field} />
                   </FormControl>
-                  <FormDescription>
-                    This is your public display postal code.
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -203,9 +184,6 @@ const Basic = () => {
                   <FormControl>
                     <Input placeholder="City" {...field} />
                   </FormControl>
-                  <FormDescription>
-                    This is your public display city.
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -219,9 +197,6 @@ const Basic = () => {
                   <FormControl>
                     <Input placeholder="Country Code" {...field} />
                   </FormControl>
-                  <FormDescription>
-                    This is your public display country code.
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -235,17 +210,15 @@ const Basic = () => {
                   <FormControl>
                     <Input placeholder="Region" {...field} />
                   </FormControl>
-                  <FormDescription>
-                    This is your public display region.
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
             />
           </div>
         </div>
-        <div className="flex justify-end">
-        <Button type="submit">Next</Button>
+        <div className="flex justify-between">
+        <Button type="submit">Confirm</Button>
+        <Button onClick={handleNext}>Next</Button>
         </div>
       </form>
     </Form>

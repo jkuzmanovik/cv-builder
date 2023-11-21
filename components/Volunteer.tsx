@@ -83,9 +83,6 @@ const Volunteer = ({ id, volunteer, setVolunteers }: VolunteerProps) => {
                   <FormControl>
                     <Input placeholder="Organization" {...field} />
                   </FormControl>
-                  <FormDescription>
-                    This is your public display name.
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -99,9 +96,6 @@ const Volunteer = ({ id, volunteer, setVolunteers }: VolunteerProps) => {
                   <FormControl>
                     <Input placeholder="Position" {...field} />
                   </FormControl>
-                  <FormDescription>
-                    This is your public display name.
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -113,16 +107,56 @@ const Volunteer = ({ id, volunteer, setVolunteers }: VolunteerProps) => {
                 <FormItem>
                   <FormLabel>URL</FormLabel>
                   <FormControl>
-                    <Input placeholder="url" {...field} />
+                    <Input placeholder="URL" {...field} />
                   </FormControl>
-                  <FormDescription>
-                    This is your public display name.
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
             />
-           
+            <br />
+         <FormField
+          control={form.control}
+          name="startDate"
+          render={({ field }) => (
+            <FormItem className="flex flex-col">
+              <FormLabel>Start date</FormLabel>
+              <Popover>
+                <PopoverTrigger asChild>
+                  <FormControl>
+                    <Button
+                      variant={"outline"}
+                      className={cn(
+                        "w-[240px] pl-3 text-left font-normal",
+                        !field.value && "text-muted-foreground"
+                      )}
+                    >
+                      {field.value ? (
+                        format(field.value, "PPP")
+                      ) : (
+                        <span>Pick a date</span>
+                      )}
+                      <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                    </Button>
+                  </FormControl>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0" align="start">
+                  <Calendar
+                    mode="single"
+                    selected={field.value}
+                    onSelect={field.onChange}
+                    disabled={(date) =>
+                      date > new Date() || date < new Date("1900-01-01")
+                    }
+                    initialFocus
+                  />
+                </PopoverContent>
+              </Popover>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+
          <FormField
           control={form.control}
           name="endDate"
@@ -160,60 +194,11 @@ const Volunteer = ({ id, volunteer, setVolunteers }: VolunteerProps) => {
                   />
                 </PopoverContent>
               </Popover>
-              <FormDescription>
-                Your date of birth is used to calculate your age.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
-
-
                 
-         <FormField
-          control={form.control}
-          name="startDate"
-          render={({ field }) => (
-            <FormItem className="flex flex-col">
-              <FormLabel>Start Date</FormLabel>
-              <Popover>
-                <PopoverTrigger asChild>
-                  <FormControl>
-                    <Button
-                      variant={"outline"}
-                      className={cn(
-                        "w-[240px] pl-3 text-left font-normal",
-                        !field.value && "text-muted-foreground"
-                      )}
-                    >
-                      {field.value ? (
-                        format(field.value, "PPP")
-                      ) : (
-                        <span>Pick a date</span>
-                      )}
-                      <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                    </Button>
-                  </FormControl>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0" align="start">
-                  <Calendar
-                    mode="single"
-                    selected={field.value}
-                    onSelect={field.onChange}
-                    disabled={(date) =>
-                      date > new Date() || date < new Date("1900-01-01")
-                    }
-                    initialFocus
-                  />
-                </PopoverContent>
-              </Popover>
-              <FormDescription>
-                Your date of birth is used to calculate your age.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
 
 
 
@@ -228,9 +213,6 @@ const Volunteer = ({ id, volunteer, setVolunteers }: VolunteerProps) => {
                   <FormControl>
                     <Input placeholder="Summary" {...field} />
                   </FormControl>
-                  <FormDescription>
-                    This is your public display name.
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -245,9 +227,6 @@ const Volunteer = ({ id, volunteer, setVolunteers }: VolunteerProps) => {
                 <FormControl>
                     <Textarea placeholder="Type every highlight in new line" {...field} />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}

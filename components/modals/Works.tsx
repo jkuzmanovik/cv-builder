@@ -74,8 +74,8 @@ const Works = () => {
         <Button onClick={handleNext}>Next</Button>
       </div>
       <div className="flex gap-2">
-        <Button onClick={increment}> +Works </Button>
-        {counter > 1 && <Button onClick={decrement}> -Profile </Button>}
+        <Button onClick={increment}> + Works </Button>
+        {counter > 1 && <Button onClick={decrement}> - Works </Button>}
       </div>
     </>
   );

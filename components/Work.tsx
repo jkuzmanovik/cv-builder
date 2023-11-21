@@ -84,7 +84,7 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleSubmit)}>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-3 mt-2">
           <FormField
             control={form.control}
             name="name"
@@ -94,9 +94,6 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
                 <FormControl>
                   <Input placeholder="Name" {...field} />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -110,9 +107,6 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
                 <FormControl>
                   <Input placeholder="Location" {...field} />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -126,9 +120,6 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
                 <FormControl>
                   <Input placeholder="Description" {...field} />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -143,9 +134,6 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
                 <FormControl>
                   <Input placeholder="Position" {...field} />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -157,11 +145,8 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
               <FormItem>
                 <FormLabel>URL</FormLabel>
                 <FormControl>
-                  <Input placeholder="url" {...field} />
+                  <Input placeholder="URL" {...field} />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -204,9 +189,6 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
                   />
                 </PopoverContent>
               </Popover>
-              <FormDescription>
-                Your date of birth is used to calculate your age.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -250,9 +232,6 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
                   />
                 </PopoverContent>
               </Popover>
-              <FormDescription>
-                Your date of birth is used to calculate your age.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -267,15 +246,13 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
               <FormItem>
                 <FormLabel>Summary</FormLabel>
                 <FormControl>
-                  <Input placeholder="Summary" {...field} />
+                  <Textarea placeholder="Summary" {...field} />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
+          <br />
           <FormField
             control={form.control}
             name="highlights"
@@ -285,9 +262,6 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
                 <FormControl>
                     <Textarea placeholder="Type every highlight in new line" {...field} />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -301,15 +275,12 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
                 <FormControl>
                   <Textarea placeholder="Type every keyword in new line" {...field} />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
         </div>
-        <Button type="submit">Confirm</Button>
+        <Button type="submit" className="mt-2">Confirm</Button>
       </form>
     </Form>
   );

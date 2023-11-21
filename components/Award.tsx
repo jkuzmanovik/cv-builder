@@ -68,8 +68,8 @@ const Award = ({ id, award, setAwards }: AwardProps) => {
               name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Institution</FormLabel>
-                  <Input {...field} />
+                  <FormLabel>Title</FormLabel>
+                  <Input {...field} placeholder="Title" />
                   <FormMessage>
                     {form.formState.errors.title?.message}
                   </FormMessage>
@@ -114,9 +114,6 @@ const Award = ({ id, award, setAwards }: AwardProps) => {
                   />
                 </PopoverContent>
               </Popover>
-              <FormDescription>
-                Your date of birth is used to calculate your age.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -126,8 +123,8 @@ const Award = ({ id, award, setAwards }: AwardProps) => {
               name="awarder"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Institution</FormLabel>
-                  <Input {...field} />
+                  <FormLabel>Awarder</FormLabel>
+                  <Input {...field} placeholder="Awarder" />
                   <FormMessage>
                     {form.formState.errors.awarder?.message}
                   </FormMessage>
@@ -141,8 +138,8 @@ const Award = ({ id, award, setAwards }: AwardProps) => {
               name="summary"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Institution</FormLabel>
-                  <Textarea {...field} />
+                  <FormLabel>Summary</FormLabel>
+                  <Textarea {...field}  placeholder="Summary"/>
                   <FormMessage>
                     {form.formState.errors.summary?.message}
                   </FormMessage>

@@ -67,7 +67,6 @@ const Publication = ({
 
   return (
     <>
-      <h1>Aloo</h1>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)}>
           <div className="grid grid-cols-2 gap-3">
@@ -76,8 +75,8 @@ const Publication = ({
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Institution</FormLabel>
-                  <Input {...field} />
+                  <FormLabel>Name</FormLabel>
+                  <Input {...field} placeholder="Name" />
                   <FormMessage>
                     {form.formState.errors.name?.message}
                   </FormMessage>
@@ -90,8 +89,8 @@ const Publication = ({
               name="publisher"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Institution</FormLabel>
-                  <Input {...field} />
+                  <FormLabel>Publisher</FormLabel>
+                  <Input {...field}  placeholder="Publisher"/>
                   <FormMessage>
                     {form.formState.errors.publisher?.message}
                   </FormMessage>
@@ -135,9 +134,6 @@ const Publication = ({
                       />
                     </PopoverContent>
                   </Popover>
-                  <FormDescription>
-                    Your date of birth is used to calculate your age.
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -147,8 +143,8 @@ const Publication = ({
               name="url"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>url</FormLabel>
-                  <Input {...field} />
+                  <FormLabel>URL</FormLabel>
+                  <Input {...field} placeholder="URL" />
                   <FormMessage>
                     {form.formState.errors.url?.message}
                   </FormMessage>
@@ -160,8 +156,8 @@ const Publication = ({
               name="summary"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Institution</FormLabel>
-                  <Textarea {...field} />
+                  <FormLabel>Summary</FormLabel>
+                  <Textarea {...field} placeholder="Summary" />
                   <FormMessage>
                     {form.formState.errors.summary?.message}
                   </FormMessage>
@@ -169,7 +165,7 @@ const Publication = ({
               )}
             />
           </div>
-          <Button type="submit">Submit</Button>
+          <Button type="submit" className="mt-2">Submit</Button>
         </form>
       </Form>
     </>

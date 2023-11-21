@@ -71,8 +71,8 @@ const Certificates = () => {
         <Button onClick={handleNext}>Next</Button>
       </div>
       <div className="flex gap-2">
-        <Button onClick={increment}> +Volunteer </Button>
-        {counter > 1 && <Button onClick={decrement}> -Volunteer </Button>}
+        <Button onClick={increment}> + Certificate </Button>
+        {counter > 1 && <Button onClick={decrement}> - Certificate </Button>}
       </div>
     </>
   )
