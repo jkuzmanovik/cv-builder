@@ -21,46 +21,47 @@ import { CalendarIcon } from "lucide-react";
 import { Calendar } from "./ui/calendar";
 import { Textarea } from "./ui/textarea";
 
-interface SkillProps {
-  id: number;
-  skill: {
-    name: string;
-    level: string;
-    keywords: "";
-  };
-  setSkills: (skill: any) => void;
-}
+interface InterestProps {
+    id: number;
+    interest: {
+        name: string;
+        keywords: "";
+    };
+    setInterests: (interest: any) => void;
+    }
 
 const formSchema = z.object({
-  name: z.string().min(3).max(20),
-  level: z.string().min(3).max(20),
-  keywords: z.string(),
+    name: z.string().min(3).max(20),
+    keywords: z.string(),
 });
 
-const Skill = ({ id, skill, setSkills }: SkillProps) => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: skill.name,
-      level: skill.level,
-      keywords: skill.keywords ? (skill.keywords as string[]).join("\n") : "",
-    },
-  });
 
-  const handleSubmit = (data: z.infer<typeof formSchema>) => {
-    let newData = data;
-    newData.keywords = data.keywords.split("\n") as any;
-    setSkills((prev: any) => {
-      const newSkills = [...prev];
-      newSkills[id] = newData;
-      return newSkills;
+const Interest = ({ id, interest, setInterests }: InterestProps) => {
+    const form = useForm<z.infer<typeof formSchema>>({
+        resolver: zodResolver(formSchema),
+        defaultValues: {
+            name: interest.name,
+            keywords: interest.keywords ? (interest.keywords as string[]).join("\n") : "",
+        },
     });
-  };
+
+    const handleSubmit = (data: z.infer<typeof formSchema>) => {
+        let newData = data;
+        newData.keywords = data.keywords.split("\n") as any;
+        setInterests((prev: any) => {
+            const newInterests = [...prev];
+            newInterests[id] = newData;
+            return newInterests;
+        });
+
+        return <h1>ok</h1>;
+    }
 
   return (
     <>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(handleSubmit)}>
+        <Form {...form}>
+            <form onSubmit = {form.handleSubmit(handleSubmit)}>
+
           <div className="grid grid-cols-2 gap-3">
 
             <FormField
@@ -78,36 +79,24 @@ const Skill = ({ id, skill, setSkills }: SkillProps) => {
             />
             <FormField
               control={form.control}
-              name="level"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Institution</FormLabel>
-                  <Input {...field} />
-                  <FormMessage>
-                    {form.formState.errors.level?.message}
-                  </FormMessage>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
               name="keywords"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Keywords</FormLabel>
-                  <Textarea {...field} placeholder="Type keywords with space" />
+                  <Textarea {...field} placeholder="Type word by word" />
                   <FormMessage>
                     {form.formState.errors.keywords?.message}
                   </FormMessage>
                 </FormItem>
               )}
             />
-          </div>
-          <Button type="submit" className="m-3">Submit</Button>
-        </form>
-      </Form>
-    </>
-  );
-};
 
-export default Skill;
+          </div>
+          <Button type="submit">Submit</Button>
+                </form>
+        </Form>
+    </>
+  )
+}
+
+export default Interest
