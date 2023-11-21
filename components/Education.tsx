@@ -33,7 +33,7 @@ interface EducationProps {
     score: string;
     courses: "";
   };
-  setEducations: (education: any) => void;
+  setEducation: (education: any) => void;
 }
 
 const formSchema = z.object({
@@ -47,7 +47,7 @@ const formSchema = z.object({
   courses: z.string(),
 });
 
-const Education = ({ id, education, setEducations }: EducationProps) => {
+const Education = ({ id, education, setEducation }: EducationProps) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -67,7 +67,7 @@ const Education = ({ id, education, setEducations }: EducationProps) => {
   const handleSubmit = (data: z.infer<typeof formSchema>) => {
     let newData = data;
     newData.courses = data.courses.split("\n") as any;
-    setEducations((prev: any) => {
+    setEducation((prev: any) => {
       const newEducations = [...prev];
       newEducations[id] = data;
       return newEducations;

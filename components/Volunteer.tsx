@@ -32,7 +32,7 @@ interface VolunteerProps {
     summary: string;
     highlights: "";
   };
-  setVolunteers: (volunteer: any) => void;
+  setVolunteer: (volunteer: any) => void;
 }
 
 const formSchema = z.object({
@@ -45,7 +45,8 @@ const formSchema = z.object({
   highlights: z.string(),
 });
 
-const Volunteer = ({ id, volunteer, setVolunteers }: VolunteerProps) => {
+const Volunteer = ({ id, volunteer, setVolunteer }: VolunteerProps) => {
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -62,7 +63,7 @@ const Volunteer = ({ id, volunteer, setVolunteers }: VolunteerProps) => {
   const handleSubmit = (data: z.infer<typeof formSchema>) => {
      let newData = data;
      newData.highlights = data.highlights.split("\n") as any;
-    setVolunteers((prev: any) => {
+    setVolunteer((prev: any) => {
       const newVolunteers = [...prev];
       newVolunteers[id] = data;
       return newVolunteers;

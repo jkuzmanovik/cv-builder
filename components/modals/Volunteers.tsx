@@ -6,12 +6,12 @@ import Volunteer from "../Volunteer";
 const Volunteers = () => {
   const formStore = useFormStore();
   const [counter, setCounter] = useState(
-    formStore.json.volunteers ? formStore.json.volunteers.length : 1
+    formStore.json.volunteer ? formStore.json.volunteer.length : 1
   );
   const stepStore = useStepStore();
-  const [volunteers, setVolunteers] = useState(
-    formStore.json.volunteers
-      ? formStore.json.volunteers
+  const [volunteer, setVolunteer] = useState(
+    formStore.json.volunteer
+      ? formStore.json.volunteer
       : [
           {
             organization: "",
@@ -27,8 +27,8 @@ const Volunteers = () => {
 
   const increment = () => {
     setCounter(counter + 1);
-    setVolunteers([
-      ...volunteers,
+    setVolunteer([
+      ...volunteer,
       {
         organization: "",
         position: "",
@@ -43,11 +43,11 @@ const Volunteers = () => {
 
   const decrement = () => {
     setCounter(counter - 1);
-    setVolunteers(volunteers.slice(0, -1));
+    setVolunteer(volunteer.slice(0, -1));
   };
 
   const handleNext = () => {
-    formStore.addField("volunteers", volunteers);
+    formStore.addField("volunteer", volunteer);
     stepStore.increaseStep();
   };
   const handleBack = () => {
@@ -57,11 +57,11 @@ const Volunteers = () => {
   return (
     <>
       <h1 className="text-xl pb-5 font-medium">Volunteer</h1>
-      {volunteers.map((volunteer: any, index: any) => (
+      {volunteer.map((volunteer: any, index: any) => (
         <Volunteer
           key={index}
           volunteer={volunteer}
-          setVolunteers={setVolunteers}
+          setVolunteer={setVolunteer}
           id={index}
         />
       ))}

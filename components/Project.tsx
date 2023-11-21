@@ -46,9 +46,6 @@ const formSchema = z.object({
   startDate: z.date(),
   endDate: z.date(),
   url: z.string().url(),
-  roles: z.string(),
-  entity: z.string().min(3).max(20),
-  type: z.string().min(3).max(20),
 });
 
 const Project = ({ id, project, setProjects }: ProjectProps) => {
@@ -66,9 +63,6 @@ const Project = ({ id, project, setProjects }: ProjectProps) => {
       startDate: project.startDate,
       endDate: project.endDate,
       url: project.url,
-      roles: project.roles ? (project.roles as string[]).join("\n") : "",
-      entity: project.entity,
-      type: project.type,
     },
   });
 
@@ -76,7 +70,6 @@ const Project = ({ id, project, setProjects }: ProjectProps) => {
     let newData = data;
     newData.highlights = data.highlights.split("\n") as any;
     newData.keywords = data.keywords.split("\n") as any;
-    newData.roles = data.roles.split("\n") as any;
     setProjects((prev: any) => {
       const newProjects = [...prev];
       newProjects[id] = data;
@@ -244,52 +237,10 @@ const Project = ({ id, project, setProjects }: ProjectProps) => {
                 </FormItem>
               )}
             />
-            <FormField
-              control={form.control}
-              name="roles"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Roles</FormLabel>
-                  <Textarea
-                    {...field}
-                    placeholder="Type every role on new line"
-                  />
-                  <FormMessage>
-                    {form.formState.errors.roles?.message}
-                  </FormMessage>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="entity"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Entity</FormLabel>
-                  <Input {...field} placeholder="Entity" />
-                  <FormMessage>
-                    {form.formState.errors.entity?.message}
-                  </FormMessage>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="type"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Type</FormLabel>
-                  <Input {...field} placeholder="Type" />
-                  <FormMessage>
-                    {form.formState.errors.type?.message}
-                  </FormMessage>
-                </FormItem>
-              )}
-            />
           </div>
-            <Button type="submit" className="mt-3">
-              Confirm
-            </Button>
+          <Button type="submit" className="mt-3">
+            Confirm
+          </Button>
         </form>
       </Form>
     </>

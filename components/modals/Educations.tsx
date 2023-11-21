@@ -7,12 +7,12 @@ import { Button } from "../ui/button";
 const Educations = () => {
   const formStore = useFormStore();
   const [counter, setCounter] = useState(
-    formStore.json.educations ? formStore.json.educations.length : 1
+    formStore.json.education ? formStore.json.education.length : 1
   );
   const stepStore = useStepStore();
-  const [educations, setEducations] = useState(
-    formStore.json.educations
-      ? formStore.json.educations
+  const [education, setEducation] = useState(
+    formStore.json.education
+      ? formStore.json.education
       : [
           {
             institution: "",
@@ -29,8 +29,8 @@ const Educations = () => {
 
   const increment = () => {
     setCounter(counter + 1);
-    setEducations([
-      ...educations,
+    setEducation([
+      ...education,
       {
         institution: "",
         url: "",
@@ -46,10 +46,10 @@ const Educations = () => {
 
   const decrement = () => {
     setCounter(counter - 1);
-    setEducations(educations.slice(0, -1));
+    setEducation(education.slice(0, -1));
   }
   const handleNext = () => {
-    formStore.addField("educations", educations);
+    formStore.addField("education", education);
     stepStore.increaseStep();
   }
 
@@ -60,12 +60,12 @@ const Educations = () => {
   return (
     <>
       <h1 className="text-xl pb-5 font-medium">Education</h1>
-      {educations.map((education:any, index:any) => (
+      {education.map((education:any, index:any) => (
         <Education
           key={index}
           id={index}
           education={education}
-          setEducations={setEducations}
+          setEducation={setEducation}
           />
       ))}
       <div className="flex justify-end gap-2">

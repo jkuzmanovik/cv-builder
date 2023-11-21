@@ -24,9 +24,6 @@ const Projects = () => {
             startDate: new Date(),
             endDate: new Date(),
             url: "",
-            roles: "",
-            entity: "",
-            type: "",
           },
         ]
   );
@@ -43,9 +40,6 @@ const Projects = () => {
         startDate: new Date(),
         endDate: new Date(),
         url: "",
-        roles: "",
-        entity: "",
-        type: "",
       },
     ]);
   };

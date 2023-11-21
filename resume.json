@@ -1,161 +1,272 @@
-
-  {
+{
     "basics": {
-        "name": "Jordan Kuzmanovikj",
-        "label": "This is my label",
+        "name": "Jordan Kuzmanovik",
+        "label": "Jas sum label",
         "email": "jordan.kuzmanovik@gmail.com",
         "phone": "075404253",
         "url": "https://www.majonidiamonds.com/",
-        "summary": "Ova e kratok summary za mene",
-        "adress": "Dimitar Makedonski broj 2",
-        "postalCode": "1000",
-        "city": "Skopje",
-        "countryCode": "North Macedonia",
-        "region": "Skopje"
+        "summary": "Jas sum najdobar programer",
+        "location": {
+            "adress": "Dimitar Makedonski broj 2",
+            "postalCode": "1000",
+            "city": "Skopje",
+            "countryCode": "North Macedonia",
+            "region": "Skopje"
+        }
     },
     "profiles": [
         {
             "network": "facebook",
-            "username": "jkuzmanovik",
+            "username": "beliotcrnec",
             "url": "https://www.facebook.com/"
+        },
+        {
+            "network": "twitter",
+            "username": "beliotcrnec",
+            "url": "https://www.twitter.com/"
         }
     ],
-    "works": [
+    "work": [
         {
             "name": "Majoni Diamonds",
-            "location": "Gtc zlatarska ulica",
-            "description": "Zlatar",
-            "position": "Menadzer",
+            "position": "Gazda",
             "url": "https://www.majonidiamonds.com/",
-            "startDate": "2023-11-13T23:00:00.000Z",
+            "startDate": "2023-11-05T23:00:00.000Z",
             "endDate": "2023-11-19T23:00:00.000Z",
-            "summary": "Rabotev kakok glaven",
+            "summary": "Otvaram dukan ",
             "highlights": [
-                "Mnogu",
-                "pari"
-            ],
-            "keywords": [
-                "se",
-                "pravea"
+                "najdobar",
+                "prodavac"
+            ]
+        },
+        {
+            "name": "Midea",
+            "position": "Klimater",
+            "url": "https://www.facebook.com/",
+            "startDate": "2023-11-21T21:45:14.042Z",
+            "endDate": "2023-11-21T21:45:14.042Z",
+            "summary": "MEstam klmii",
+            "highlights": [
+                "najdobri",
+                "klimi"
             ]
         }
     ],
-    "volunteers": [
+    "volunteer": [
         {
-            "organization": "Organizacija",
-            "position": "Pozicija",
-            "url": "https://www.majonidiamonds.com/",
-            "startDate": "2023-11-21T17:32:19.709Z",
-            "endDate": "2023-11-21T17:32:19.709Z",
-            "summary": "Kratok summary",
+            "organization": "Netsetera",
+            "position": "programer",
+            "url": "https://www.stoneandstrand.com/",
+            "startDate": "2023-11-21T21:45:35.054Z",
+            "endDate": "2023-11-21T21:45:35.054Z",
+            "summary": "Pravam programi",
             "highlights": [
-                "ova",
-                "e",
-                "higlight"
+                "front",
+                "end"
+            ]
+        },
+        {
+            "organization": "netsetera 2",
+            "position": "pozicija 2",
+            "url": "https://www.bluenile.com/",
+            "startDate": "2023-07-16T22:00:00.000Z",
+            "endDate": "2023-11-21T21:45:51.818Z",
+            "summary": "Ova e kratok summary",
+            "highlights": [
+                "nekoj",
+                "higlights"
             ]
         }
     ],
     "educations": [
         {
-            "institution": "Edukacija",
-            "url": "https://www.majonidiamonds.com/",
-            "area": "Kompjuteri",
-            "studyType": "Fakultet",
-            "startDate": "2023-11-21T17:32:41.064Z",
-            "endDate": "2023-11-21T17:32:41.064Z",
+            "institution": "Finki",
+            "url": "https://www.finki.com/",
+            "area": "Programer",
+            "studyType": "bachelor",
+            "startDate": "2023-11-21T21:46:20.684Z",
+            "endDate": "2023-11-21T21:46:20.684Z",
+            "score": "13",
+            "courses": [
+                "diskretna",
+                "objektno"
+            ]
+        },
+        {
+            "institution": "HRD",
+            "url": "https://www.hrd.mk/mk/",
+            "area": "Dijamanter",
+            "studyType": "dijamanti",
+            "startDate": "2023-11-21T21:46:55.688Z",
+            "endDate": "2023-11-21T21:46:55.688Z",
+            "score": "10",
+            "courses": [
+                "HRD"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "finki",
+            "url": "https://www.stoneandstrand.com/",
+            "area": "FInki fakultet",
+            "studyType": "bacherlor",
+            "startDate": "2023-11-21T21:47:21.112Z",
+            "endDate": "2023-11-21T21:47:21.112Z",
             "score": "10",
             "courses": [
                 "diskretna",
-                "programiranje"
+                "objektno"
+            ]
+        },
+        {
+            "institution": "HRD",
+            "url": "https://www.stoneandstrand.com/",
+            "area": "dijamanter",
+            "studyType": "dijamanti",
+            "startDate": "2023-11-21T21:48:13.209Z",
+            "endDate": "2023-11-21T21:48:13.209Z",
+            "score": "10",
+            "courses": [
+                "dijamanti",
+                "hrd"
             ]
         }
     ],
     "awards": [
         {
-            "title": "HRD EDUCATION",
-            "date": "2023-11-21T17:32:56.845Z",
-            "awarder": "DIPLOMIRAN",
-            "summary": "Kratok summary"
+            "title": "Sahista",
+            "date": "2021-08-16T22:00:00.000Z",
+            "awarder": "Pehar",
+            "summary": "Dobiv pehar"
+        },
+        {
+            "title": "Use eden pehar",
+            "date": "2023-11-21T21:48:47.236Z",
+            "awarder": "use eden award",
+            "summary": "najdobar summary"
         }
     ],
     "certificates": [
         {
-            "name": "JOCO sertifikat",
-            "date": "2023-10-31T23:00:00.000Z",
-            "url": "https://www.majonidiamonds.com/",
+            "name": "HRD now",
+            "date": "2023-11-21T21:49:02.061Z",
+            "url": "https://www.stoneandstrand.com/",
             "issuer": "HRD"
+        },
+        {
+            "name": "USE EDEWN HRD",
+            "date": "2023-11-14T23:00:00.000Z",
+            "url": "https://www.majonidiamonds.com/",
+            "issuer": "USSE EDEN"
         }
     ],
     "publications": [
         {
-            "name": "Publukacija",
-            "publisher": "Publusher",
-            "releaseDate": "2023-11-21T17:33:24.496Z",
-            "url": "https://www.majonidiamonds.com/",
-            "summary": "Ova e sto taka"
+            "name": "Publikacija",
+            "publisher": "hrd publikacija",
+            "releaseDate": "2023-11-21T21:49:20.476Z",
+            "url": "https://www.stoneandstrand.com/",
+            "summary": "ova e summary"
+        },
+        {
+            "name": "nova publikacija",
+            "publisher": "nova publisher",
+            "releaseDate": "2023-11-21T21:49:53.092Z",
+            "url": "https://www.stoneandstrand.com/",
+            "summary": "ova e nov summary"
         }
     ],
     "skills": [
         {
-            "name": "Skilovi",
-            "level": "Leveli",
+            "name": "nov skill",
+            "level": "100",
             "keywords": [
-                "se"
+                "sekacija",
+                "najgolem",
+                "sekac"
+            ]
+        },
+        {
+            "name": "Ova e drug",
+            "level": "200",
+            "keywords": [
+                "sekacija",
+                "isto",
+                "taka"
             ]
         }
     ],
     "languages": [
         {
             "language": "makedonski",
-            "fluency": "najjak"
+            "fluency": "najdobar"
         },
         {
-            "language": "use eden",
-            "fluency": "use pojak"
+            "language": "angliski",
+            "fluency": "use podobar"
         }
     ],
     "interests": [
         {
-            "name": "Interest",
+            "name": "Programiranje",
             "keywords": [
-                "ova",
-                "e",
-                "interest"
+                "najdobro",
+                "programiram"
+            ]
+        },
+        {
+            "name": "novo programiranje",
+            "keywords": [
+                "use ",
+                "programiranje"
             ]
         }
     ],
     "references": [
         {
             "name": "referenca",
-            "reference": "ova e referenca"
+            "reference": "da referenca"
+        },
+        {
+            "name": "nova referenca",
+            "reference": "da da da"
         }
     ],
     "projects": [
         {
-            "name": "Project name",
-            "description": "description",
+            "name": "Nov proekt",
+            "description": "nova deskripcija",
             "highlights": [
-                "ova e ",
+                "ova",
+                "e",
                 "higlight"
             ],
             "keywords": [
                 "ova",
                 "e",
-                "keywords",
-                ""
+                "keyword"
             ],
-            "startDate": "2023-11-14T23:00:00.000Z",
-            "endDate": "2023-11-15T23:00:00.000Z",
-            "url": "https://www.majonidiamonds.com/",
-            "roles": [
-                "programer",
-                "menadzer"
+            "startDate": "2023-11-15T21:00:00.000Z",
+            "endDate": "2023-11-19T21:00:00.000Z",
+            "url": "https://www.stoneandstrand.com/"
+        },
+        {
+            "name": "i ova e project",
+            "description": "nov description",
+            "highlights": [
+                "aj da vidime sega"
             ],
-            "entity": "entity",
-            "type": "tip"
+            "keywords": [
+                "da",
+                "more"
+            ],
+            "startDate": "2023-11-11T23:00:00.000Z",
+            "endDate": "2023-11-19T23:00:00.000Z",
+            "url": "https://www.stoneandstrand.com/"
         }
     ],
     "coverLetter": {
-        "coverLetter": "Ova ke e posledniot covver letter\n"
+        "coverLetter": "covver letter"
     }
-  }
+}
