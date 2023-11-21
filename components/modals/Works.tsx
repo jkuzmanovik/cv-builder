@@ -9,54 +9,48 @@ import { useState } from "react";
 const Works = () => {
   const formStore = useFormStore();
   const [counter, setCounter] = useState(
-    formStore.json.works ? formStore.json.works.length : 1
+    formStore.json.work ? formStore.json.work.length : 1
   );
   const stepStore = useStepStore();
-  const [works, setWorks] = useState(
-    formStore.json.works
-      ? formStore.json.works
+  const [work, setWork] = useState(
+    formStore.json.work
+      ? formStore.json.work
       : [
           {
             name: "",
-            location: "",
-            description: "",
             position: "",
             url: "",
             startDate: new Date(),
             endDate: new Date(),
             summary: "",
             highlights: "",
-            keywords: "",
           },
         ]
   );
 
   const increment = () => {
     setCounter(counter + 1);
-    setWorks([
-      ...works,
+    setWork([
+      ...work,
       {
         name: "",
-        location: "",
-        description: "",
         position: "",
         url: "",
         startDate: new Date(),
         endDate: new Date(),
         summary: "",
         highlights: "",
-        keywords: "",
       },
     ]);
   };
 
   const decrement = () => {
     setCounter(counter - 1);
-    setWorks(works.slice(0, -1));
+    setWork(work.slice(0, -1));
   };
 
   const handleNext = () => {
-    formStore.addField("works", works);
+    formStore.addField("work", work);
     stepStore.increaseStep();
   };
   const handleBack = () => {
@@ -66,8 +60,8 @@ const Works = () => {
   return (
     <>
       <h1 className="text-xl pb-5 font-medium">Work</h1>
-      {works.map((work: any, index: any) => (
-        <Work key={index} id={index} work={work} setWorks={setWorks} />
+      {work.map((work: any, index: any) => (
+        <Work key={index} id={index} work={work} setWork={setWork} />
       ))}
       <div className="flex justify-end gap-2">
         <Button onClick={handleBack}>Back</Button>

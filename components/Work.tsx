@@ -25,39 +25,31 @@ interface WorkProps {
   id: number;
   work: {
     name: string;
-    location: string;
-    description: string;
     position: string;
     url: string;
     startDate: Date;
     endDate: Date;
     summary: string;
     highlights: "";
-    keywords: "";
   };
-  setWorks: any;
+  setWork: any;
 }
 
 const formSchema = z.object({
   name: z.string().min(3).max(20),
-  location: z.string().min(3).max(20),
-  description: z.string().min(3).max(20),
   position: z.string().min(3).max(20),
   url: z.string(),
   startDate: z.date(),
   endDate: z.date(),
   summary: z.string().min(3).max(20),
   highlights: z.string(),
-  keywords: z.string(),
 });
 
-const Work = ({ id, work, setWorks }: WorkProps) => {
+const Work = ({ id, work, setWork }: WorkProps) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: work.name,
-      location: work.location,
-      description: work.description,
       position: work.position,
       url: work.url,
       startDate: work.startDate,
@@ -66,15 +58,14 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
       //I want to join the array to string but it doesn't work it puts , between every word
       //Suggest me code that will replace the , with new line
       highlights: work.highlights ? (work.highlights as string[]).join("\n") : "",
-      keywords: work.keywords ? (work.keywords as string[]).join("\n") : "",
     },
   });
 
   const handleSubmit = (data: z.infer<typeof formSchema>) => {
      let newData = data;
-     newData.keywords = data.keywords.split("\n") as any;
      newData.highlights = data.highlights.split("\n") as any;
-    setWorks((prev: any) => {
+     console.log(newData)
+    setWork((prev: any) => {
       const newWorks = [...prev];
       newWorks[id] = newData;
       return newWorks;
@@ -98,33 +89,6 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
               </FormItem>
             )}
           />
-          <FormField
-            control={form.control}
-            name="location"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Location</FormLabel>
-                <FormControl>
-                  <Input placeholder="Location" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="description"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Description</FormLabel>
-                <FormControl>
-                  <Input placeholder="Description" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <br />
           <FormField
             control={form.control}
             name="position"
@@ -151,6 +115,7 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
               </FormItem>
             )}
           />
+          <br />
          
          <FormField
           control={form.control}
@@ -261,19 +226,6 @@ const Work = ({ id, work, setWorks }: WorkProps) => {
                 <FormLabel>Highlights</FormLabel>
                 <FormControl>
                     <Textarea placeholder="Type every highlight in new line" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="keywords"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Keywords</FormLabel>
-                <FormControl>
-                  <Textarea placeholder="Type every keyword in new line" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
