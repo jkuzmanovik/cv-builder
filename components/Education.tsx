@@ -43,7 +43,7 @@ const formSchema = z.object({
   studyType: z.string().min(3).max(20),
   startDate: z.date(),
   endDate: z.date(),
-  score: z.string().min(3).max(2),
+  score: z.string().max(2),
   courses: z.string(),
 });
 

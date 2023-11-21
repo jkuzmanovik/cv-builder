@@ -69,7 +69,7 @@ interface CertificateProps {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Name</FormLabel>
-                  <Input {...field} placeholder="URL" />
+                  <Input {...field} placeholder="Name" />
                   <FormMessage>
                     {form.formState.errors.name?.message}
                   </FormMessage>
