@@ -16,7 +16,7 @@ const Educations = () => {
       : [
           {
             institution: "",
-            url: "",
+            website: "",
             area: "",
             studyType: String,
             startDate: new Date(),
@@ -33,7 +33,7 @@ const Educations = () => {
       ...education,
       {
         institution: "",
-        url: "",
+        website: "",
         area: "",
         studyType: String,
         startDate: new Date(),

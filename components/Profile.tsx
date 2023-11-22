@@ -19,7 +19,7 @@ interface ProfileProps {
   profile: {
     network: string;
     username: string;
-    url: string;
+    website: string;
   };
   setProfies: any;
 }
@@ -27,7 +27,7 @@ interface ProfileProps {
 const formSchema = z.object({
   network: z.string().min(3).max(20),
   username: z.string().min(3).max(20),
-  url: z.string(),
+  website: z.string(),
 });
 
 const Profile = ({ id, profile,setProfies }: ProfileProps) => {
@@ -36,7 +36,7 @@ const Profile = ({ id, profile,setProfies }: ProfileProps) => {
     defaultValues:{
       network: profile.network,
       username: profile.username,
-      url: profile.url
+      website: profile.website
     } 
   });
 
@@ -80,12 +80,12 @@ const Profile = ({ id, profile,setProfies }: ProfileProps) => {
           />
           <FormField
             control={form.control}
-            name="url"
+            name="website"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>URL</FormLabel>
+                <FormLabel>website</FormLabel>
                 <FormControl>
-                  <Input placeholder="URL" {...field} />
+                  <Input placeholder="website" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

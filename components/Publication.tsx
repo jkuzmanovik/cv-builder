@@ -26,7 +26,7 @@ interface PublicationProps {
     name: string;
     publisher: string;
     releaseDate: Date;
-    url: string;
+    website: string;
     summary: string;
   };
   setPublications: (publication: any) => void;
@@ -36,7 +36,7 @@ const formSchema = z.object({
   name: z.string().min(3).max(20),
   publisher: z.string().min(3).max(20),
   releaseDate: z.date(),
-  url: z.string().url(),
+  website: z.string().url(),
   summary: z.string().min(3).max(20),
 });
 
@@ -51,7 +51,7 @@ const Publication = ({
       name: publication.name,
       publisher: publication.publisher,
       releaseDate: publication.releaseDate,
-      url: publication.url,
+      website: publication.website,
       summary: publication.summary,
     },
   });
@@ -140,13 +140,13 @@ const Publication = ({
             />
             <FormField
               control={form.control}
-              name="url"
+              name="website"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>URL</FormLabel>
-                  <Input {...field} placeholder="URL" />
+                  <FormLabel>website</FormLabel>
+                  <Input {...field} placeholder="website" />
                   <FormMessage>
-                    {form.formState.errors.url?.message}
+                    {form.formState.errors.website?.message}
                   </FormMessage>
                 </FormItem>
               )}

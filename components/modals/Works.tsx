@@ -19,7 +19,7 @@ const Works = () => {
           {
             name: "",
             position: "",
-            url: "",
+            website: "",
             startDate: new Date(),
             endDate: new Date(),
             summary: "",
@@ -35,7 +35,7 @@ const Works = () => {
       {
         name: "",
         position: "",
-        url: "",
+        website: "",
         startDate: new Date(),
         endDate: new Date(),
         summary: "",

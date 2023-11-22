@@ -26,7 +26,7 @@ interface WorkProps {
   work: {
     name: string;
     position: string;
-    url: string;
+    website: string;
     startDate: Date;
     endDate: Date;
     summary: string;
@@ -38,7 +38,7 @@ interface WorkProps {
 const formSchema = z.object({
   name: z.string().min(3).max(20),
   position: z.string().min(3).max(20),
-  url: z.string(),
+  website: z.string(),
   startDate: z.date(),
   endDate: z.date(),
   summary: z.string().min(3).max(20),
@@ -51,7 +51,7 @@ const Work = ({ id, work, setWork }: WorkProps) => {
     defaultValues: {
       name: work.name,
       position: work.position,
-      url: work.url,
+      website: work.website,
       startDate: work.startDate,
       endDate: work.endDate,
       summary: work.summary,
@@ -104,12 +104,12 @@ const Work = ({ id, work, setWork }: WorkProps) => {
           />
           <FormField
             control={form.control}
-            name="url"
+            name="website"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>URL</FormLabel>
+                <FormLabel>website</FormLabel>
                 <FormControl>
-                  <Input placeholder="URL" {...field} />
+                  <Input placeholder="website" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

@@ -1,272 +1,144 @@
 {
     "basics": {
         "name": "Jordan Kuzmanovik",
-        "label": "Jas sum label",
+        "label": "Kuzmanovik",
         "email": "jordan.kuzmanovik@gmail.com",
-        "phone": "075404253",
-        "url": "https://www.majonidiamonds.com/",
-        "summary": "Jas sum najdobar programer",
+        "phone": "75404253",
+        "website": "https://www.brilliantearth.com/",
+        "summary": "sumary",
         "location": {
             "adress": "Dimitar Makedonski broj 2",
             "postalCode": "1000",
             "city": "Skopje",
             "countryCode": "North Macedonia",
-            "region": "Skopje"
+            "region": "Macedonia"
         }
     },
     "profiles": [
         {
-            "network": "facebook",
-            "username": "beliotcrnec",
+            "network": "jordan",
+            "username": "193214",
             "url": "https://www.facebook.com/"
-        },
-        {
-            "network": "twitter",
-            "username": "beliotcrnec",
-            "url": "https://www.twitter.com/"
         }
     ],
     "work": [
         {
-            "name": "Majoni Diamonds",
-            "position": "Gazda",
-            "url": "http://www.majonidiamonds.com",
-            "startDate": "2023-11-05T23:00:00.000Z",
-            "endDate": "2023-11-19T23:00:00.000Z",
-            "summary": "Otvaram dukan ",
+            "name": "Jordan Kuzmanovik",
+            "position": "Najjaka Pozicija",
+            "website": "https://www.brilliantearth.com/",
+            "startDate": "2023-11-22T14:45:21.922Z",
+            "endDate": "2023-11-22T14:45:21.922Z",
+            "summary": "dsa",
             "highlights": [
-                "najdobar",
-                "prodavac"
-            ]
-        },
-        {
-            "name": "Midea",
-            "position": "Klimater",
-            "url": "https://www.facebook.com/",
-            "startDate": "2023-11-21T21:45:14.042Z",
-            "endDate": "2023-11-21T21:45:14.042Z",
-            "summary": "MEstam klmii",
-            "highlights": [
-                "najdobri",
-                "klimi"
+                "dasf"
             ]
         }
     ],
     "volunteer": [
         {
-            "organization": "Netsetera",
-            "position": "programer",
-            "url": "https://www.stoneandstrand.com/",
-            "startDate": "2023-11-21T21:45:35.054Z",
-            "endDate": "2023-11-21T21:45:35.054Z",
-            "summary": "Pravam programi",
-            "highlights": [
-                "front",
-                "end"
-            ]
-        },
-        {
-            "organization": "netsetera 2",
-            "position": "pozicija 2",
-            "url": "https://www.bluenile.com/",
-            "startDate": "2023-07-16T22:00:00.000Z",
-            "endDate": "2023-11-21T21:45:51.818Z",
+            "organization": "dasf",
+            "position": "sadf",
+            "website": "https://www.brilliantearth.com/",
+            "startDate": "2023-11-22T14:45:29.046Z",
+            "endDate": "2023-11-22T14:45:29.046Z",
             "summary": "Ova e kratok summary",
             "highlights": [
-                "nekoj",
-                "higlights"
-            ]
-        }
-    ],
-    "educations": [
-        {
-            "institution": "Finki",
-            "url": "https://www.finki.com/",
-            "area": "Programer",
-            "studyType": "bachelor",
-            "startDate": "2023-11-21T21:46:20.684Z",
-            "endDate": "2023-11-21T21:46:20.684Z",
-            "score": "13",
-            "courses": [
-                "diskretna",
-                "objektno"
-            ]
-        },
-        {
-            "institution": "HRD",
-            "url": "https://www.hrd.mk/mk/",
-            "area": "Dijamanter",
-            "studyType": "dijamanti",
-            "startDate": "2023-11-21T21:46:55.688Z",
-            "endDate": "2023-11-21T21:46:55.688Z",
-            "score": "10",
-            "courses": [
-                "HRD"
+                "da",
+                "da",
+                "i",
+                "da"
             ]
         }
     ],
     "education": [
         {
-            "institution": "finki",
-            "url": "https://www.stoneandstrand.com/",
-            "area": "FInki fakultet",
-            "studyType": "bacherlor",
-            "startDate": "2023-11-21T21:47:21.112Z",
-            "endDate": "2023-11-21T21:47:21.112Z",
+            "institution": "Ova e",
+            "website": "https://www.brilliantearth.com/",
+            "area": "This is area",
+            "studyType": "Ova e study type",
+            "startDate": "2023-11-06T23:00:00.000Z",
+            "endDate": "2023-11-22T14:45:42.288Z",
             "score": "10",
             "courses": [
-                "diskretna",
-                "objektno"
-            ]
-        },
-        {
-            "institution": "HRD",
-            "url": "https://www.stoneandstrand.com/",
-            "area": "dijamanter",
-            "studyType": "dijamanti",
-            "startDate": "2023-11-21T21:48:13.209Z",
-            "endDate": "2023-11-21T21:48:13.209Z",
-            "score": "10",
-            "courses": [
-                "dijamanti",
-                "hrd"
+                ""
             ]
         }
     ],
     "awards": [
         {
-            "title": "Sahista",
-            "date": "2021-08-16T22:00:00.000Z",
-            "awarder": "Pehar",
-            "summary": "Dobiv pehar"
-        },
-        {
-            "title": "Use eden pehar",
-            "date": "2023-11-21T21:48:47.236Z",
-            "awarder": "use eden award",
-            "summary": "najdobar summary"
+            "title": "sdaf",
+            "date": "2023-11-22T14:45:53.564Z",
+            "awarder": "dasf",
+            "summary": "adsf"
         }
     ],
     "certificates": [
         {
-            "name": "HRD now",
-            "date": "2023-11-21T21:49:02.061Z",
-            "url": "https://www.stoneandstrand.com/",
-            "issuer": "HRD"
-        },
-        {
-            "name": "USE EDEWN HRD",
-            "date": "2023-11-14T23:00:00.000Z",
-            "url": "https://www.majonidiamonds.com/",
-            "issuer": "USSE EDEN"
+            "name": "dasf",
+            "date": "2023-11-22T14:45:57.429Z",
+            "website": "https://www.brilliantearth.com/",
+            "issuer": "adsf"
         }
     ],
     "publications": [
         {
-            "name": "Publikacija",
-            "publisher": "hrd publikacija",
-            "releaseDate": "2023-11-21T21:49:20.476Z",
-            "url": "https://www.stoneandstrand.com/",
-            "summary": "ova e summary"
-        },
-        {
-            "name": "nova publikacija",
-            "publisher": "nova publisher",
-            "releaseDate": "2023-11-21T21:49:53.092Z",
-            "url": "https://www.stoneandstrand.com/",
-            "summary": "ova e nov summary"
+            "name": "adsf",
+            "publisher": "asdf",
+            "releaseDate": "2023-11-22T14:46:03.745Z",
+            "website": "https://www.brilliantearth.com/",
+            "summary": "dasf"
         }
     ],
     "skills": [
         {
-            "name": "nov skill",
-            "level": "100",
+            "name": "adsf",
+            "level": "asdf",
             "keywords": [
-                "sekacija",
-                "najgolem",
-                "sekac"
-            ]
-        },
-        {
-            "name": "Ova e drug",
-            "level": "200",
-            "keywords": [
-                "sekacija",
-                "isto",
-                "taka"
+                "asdfasdf",
+                "adsfadsf"
             ]
         }
     ],
     "languages": [
         {
-            "language": "makedonski",
-            "fluency": "najdobar"
-        },
-        {
-            "language": "angliski",
-            "fluency": "use podobar"
+            "language": "asdf",
+            "fluency": "asdf"
         }
     ],
     "interests": [
         {
-            "name": "Programiranje",
+            "name": "sadf",
             "keywords": [
-                "najdobro",
-                "programiram"
-            ]
-        },
-        {
-            "name": "novo programiranje",
-            "keywords": [
-                "use ",
-                "programiranje"
+                "asdf",
+                "fdas"
             ]
         }
     ],
     "references": [
         {
-            "name": "referenca",
-            "reference": "da referenca"
-        },
-        {
-            "name": "nova referenca",
-            "reference": "da da da"
+            "name": "adsf",
+            "reference": "asdf"
         }
     ],
     "projects": [
         {
-            "name": "Nov proekt",
-            "description": "nova deskripcija",
+            "name": "Jordan Kuzmanovik",
+            "description": "asdf",
             "highlights": [
-                "ova",
-                "e",
-                "higlight"
+                "asdf",
+                "adsf"
             ],
             "keywords": [
-                "ova",
-                "e",
-                "keyword"
+                "adsf",
+                "fdas",
+                ""
             ],
-            "startDate": "2023-11-15T21:00:00.000Z",
-            "endDate": "2023-11-19T21:00:00.000Z",
-            "url": "https://www.stoneandstrand.com/"
-        },
-        {
-            "name": "i ova e project",
-            "description": "nov description",
-            "highlights": [
-                "aj da vidime sega"
-            ],
-            "keywords": [
-                "da",
-                "more"
-            ],
-            "startDate": "2023-11-11T23:00:00.000Z",
-            "endDate": "2023-11-19T23:00:00.000Z",
-            "url": "https://www.stoneandstrand.com/"
+            "startDate": "2023-11-19T23:00:00.000Z",
+            "endDate": "2023-11-20T23:00:00.000Z",
+            "website": "https://www.brilliantearth.com/"
         }
     ],
     "coverLetter": {
-        "coverLetter": "covver letter"
+        "coverLetter": "sadf"
     }
 }

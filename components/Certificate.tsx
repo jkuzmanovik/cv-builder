@@ -25,7 +25,7 @@ interface CertificateProps {
     certificate: {
         name: string;
         date: Date;
-        url: string;
+        website: string;
         issuer: string;
     };
     setCertificates: (certificate: any) => void;
@@ -34,7 +34,7 @@ interface CertificateProps {
     const formSchema = z.object({
         name: z.string().min(3).max(20),
         date: z.date(),
-        url: z.string().url(),
+        website: z.string().url(),
         issuer: z.string().min(3).max(20),
     });
 
@@ -45,7 +45,7 @@ interface CertificateProps {
             defaultValues: {
                 name: certificate.name,
                 date: certificate.date,
-                url: certificate.url,
+                website: certificate.website,
                 issuer: certificate.issuer,
             },
         });
@@ -120,13 +120,13 @@ interface CertificateProps {
 
              <FormField
               control={form.control}
-              name="url"
+              name="website"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>URL</FormLabel>
-                  <Input {...field} placeholder="URL" />
+                  <FormLabel>website</FormLabel>
+                  <Input {...field} placeholder="website" />
                   <FormMessage>
-                    {form.formState.errors.url?.message}
+                    {form.formState.errors.website?.message}
                   </FormMessage>
                 </FormItem>
               )}

@@ -23,7 +23,7 @@ const Projects = () => {
             keywords: "",
             startDate: new Date(),
             endDate: new Date(),
-            url: "",
+            website: "",
           },
         ]
   );
@@ -39,7 +39,7 @@ const Projects = () => {
         keywords: "",
         startDate: new Date(),
         endDate: new Date(),
-        url: "",
+        website: "",
       },
     ]);
   };

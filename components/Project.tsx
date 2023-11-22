@@ -30,7 +30,7 @@ interface ProjectProps {
     keywords: "";
     startDate: Date;
     endDate: Date;
-    url: string;
+    website: string;
     roles: "";
     entity: string;
     type: string;
@@ -45,7 +45,7 @@ const formSchema = z.object({
   keywords: z.string(),
   startDate: z.date(),
   endDate: z.date(),
-  url: z.string().url(),
+  website: z.string().url(),
 });
 
 const Project = ({ id, project, setProjects }: ProjectProps) => {
@@ -62,7 +62,7 @@ const Project = ({ id, project, setProjects }: ProjectProps) => {
         : "",
       startDate: project.startDate,
       endDate: project.endDate,
-      url: project.url,
+      website: project.website,
     },
   });
 
@@ -225,13 +225,13 @@ const Project = ({ id, project, setProjects }: ProjectProps) => {
             />
             <FormField
               control={form.control}
-              name="url"
+              name="website"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>URL</FormLabel>
-                  <Input {...field} placeholder="URL" />
+                  <FormLabel>website</FormLabel>
+                  <Input {...field} placeholder="website" />
                   <FormMessage>
-                    {form.formState.errors.url?.message}
+                    {form.formState.errors.website?.message}
                   </FormMessage>
                 </FormItem>
               )}

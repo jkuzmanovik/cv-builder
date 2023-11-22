@@ -23,7 +23,7 @@ const formSchema = z.object({
   label: z.string(),
   email: z.string().email(),
   phone: z.string().min(3).max(15),
-  url: z.string().url(),
+  website: z.string(),
   summary: z.string().min(3).max(200),
   adress: z.string().min(3).max(100),
   postalCode: z.string().min(3).max(100),
@@ -43,7 +43,7 @@ const Basic = () => {
       label: formStore.json.basics.label,
       email: formStore.json.basics.email,
       phone: formStore.json.basics.phone,
-      url: formStore.json.basics.url,
+      website: formStore.json.basics.website,
       summary: formStore.json.basics.summary,
       adress: formStore.json.basics.location.adress,
       postalCode: formStore.json.basics.location.postalCode,
@@ -55,7 +55,7 @@ const Basic = () => {
         label: "",
         email: "",
         phone: "",
-        url: "",
+        website: "",
         summary: "",
         adress: "",
         postalCode: "",
@@ -70,7 +70,7 @@ const Basic = () => {
       label:data.label,
       email:data.email,
       phone:data.phone,
-      url:data.url,
+      website:data.website,
       summary:data.summary,
       location:{
         adress:data.adress,
@@ -145,12 +145,12 @@ const Basic = () => {
           />
           <FormField
             control={form.control}
-            name="url"
+            name="website"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Url</FormLabel>
+                <FormLabel>website</FormLabel>
                 <FormControl>
-                  <Input placeholder="Url" {...field} />
+                  <Input placeholder="website" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

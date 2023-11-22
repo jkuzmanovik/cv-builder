@@ -25,7 +25,7 @@ interface EducationProps {
   id: number;
   education: {
     institution: string;
-    url: string;
+    website: string;
     area: string;
     studyType: string;
     startDate: Date;
@@ -38,7 +38,7 @@ interface EducationProps {
 
 const formSchema = z.object({
   institution: z.string().min(3).max(20),
-  url: z.string().url(),
+  website: z.string().url(),
   area: z.string().min(3).max(20),
   studyType: z.string().min(3).max(20),
   startDate: z.date(),
@@ -52,7 +52,7 @@ const Education = ({ id, education, setEducation }: EducationProps) => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       institution: education.institution,
-      url: education.url,
+      website: education.website,
       area: education.area,
       studyType: education.studyType,
       startDate: education.startDate,
@@ -95,13 +95,13 @@ const Education = ({ id, education, setEducation }: EducationProps) => {
 
             <FormField
               control={form.control}
-              name="url"
+              name="website"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>URL</FormLabel>
+                  <FormLabel>website</FormLabel>
                   <Input {...field} />
                   <FormMessage>
-                    {form.formState.errors.url?.message}
+                    {form.formState.errors.website?.message}
                   </FormMessage>
                 </FormItem>
               )}

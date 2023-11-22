@@ -26,7 +26,7 @@ interface VolunteerProps {
   volunteer: {
     organization: string;
     position: string;
-    url: string;
+    website: string;
     startDate: Date;
     endDate: Date;
     summary: string;
@@ -38,7 +38,7 @@ interface VolunteerProps {
 const formSchema = z.object({
   organization: z.string().min(3).max(20),
   position: z.string().min(3).max(20),
-  url: z.string().url(),
+  website: z.string().url(),
   startDate: z.date(),
   endDate: z.date(),
   summary: z.string(),
@@ -52,7 +52,7 @@ const Volunteer = ({ id, volunteer, setVolunteer }: VolunteerProps) => {
     defaultValues: {
       organization: volunteer.organization,
       position: volunteer.position,
-      url: volunteer.url,
+      website: volunteer.website,
       startDate: volunteer.startDate,
       endDate: volunteer.endDate,
       summary: volunteer.summary,
@@ -103,12 +103,12 @@ const Volunteer = ({ id, volunteer, setVolunteer }: VolunteerProps) => {
             />
             <FormField
               control={form.control}
-              name="url"
+              name="website"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>URL</FormLabel>
+                  <FormLabel>website</FormLabel>
                   <FormControl>
-                    <Input placeholder="URL" {...field} />
+                    <Input placeholder="website" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

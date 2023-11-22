@@ -19,7 +19,7 @@ const Publications = () => {
         name: "",
         publisher: "",
         releaseDate: new Date(),
-        url: "",
+        website: "",
         summary: "",
       }
     ]
@@ -33,7 +33,7 @@ const Publications = () => {
         name: "",
         publisher: "",
         releaseDate: new Date(),
-        url: "",
+        website: "",
         summary: "",
       }
     ])

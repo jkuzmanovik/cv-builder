@@ -18,7 +18,7 @@ const Certificates = () => {
       {
         name: "",
         date: new Date(),
-        url: "",
+        website: "",
         issuer: "",
       }
     ]
@@ -31,7 +31,7 @@ const Certificates = () => {
       {
         name: "",
         date: new Date(),
-        url: "",
+        website: "",
         issuer: "",
       }
     ])

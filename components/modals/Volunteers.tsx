@@ -16,7 +16,7 @@ const Volunteers = () => {
           {
             organization: "",
             position: "",
-            url: "",
+            website: "",
             startDate: new Date(),
             endDate: new Date(),
             summary: "",
@@ -32,7 +32,7 @@ const Volunteers = () => {
       {
         organization: "",
         position: "",
-        url: "",
+        website: "",
         startDate: new Date(),
         endDate: new Date(),
         summary: "",

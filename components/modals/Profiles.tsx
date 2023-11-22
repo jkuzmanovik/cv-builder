@@ -11,7 +11,7 @@ const Profiles = () => {
     const [profiles, setProfies] =  useState(formStore.json.profiles?formStore.json.profiles:[{
         network: "",
         username: "",
-        url: "",
+        website: "",
     }]);
 
     const stepStore = useStepStore();
@@ -20,7 +20,7 @@ const Profiles = () => {
         setProfies([...profiles,{
             network: "",
             username: "",
-            url: "",
+            website: "",
         }])
     }
     const decrement = () => {
