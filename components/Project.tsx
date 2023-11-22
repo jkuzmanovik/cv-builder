@@ -223,7 +223,6 @@ const Project = ({ id, project, setProjects }: ProjectProps) => {
                 </FormItem>
               )}
             />
-
             <FormField
               control={form.control}
               name="url"
