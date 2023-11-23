@@ -1,8 +1,10 @@
-import React from 'react'
+import RenderCV from '@/components/RenderCV'
+
 const page = () => {
 
+
   return (
-    <div>page</div>
+    <RenderCV />
   )
 }
 
