@@ -20,6 +20,7 @@
     "date-fns": "^2.30.0",
     "fresh-jrs-converter": "^1.0.0",
     "fs": "^0.0.1-security",
+    "html2pdf.js": "^0.10.1",
     "jsonresume-theme-eloquent-mod": "^4.24.0",
     "jsonresume-theme-stackoverflow": "^2.0.2",
     "lucide-react": "^0.292.0",
