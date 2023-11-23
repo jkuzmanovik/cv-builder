@@ -74,3 +74,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Hide everything in print mode except the content to be printed */
+/* This will apply only when printing */
+@media print {
+  body * {
+    visibility: hidden; /* Initially hide everything */
+  }
+
+  #cv-content, #cv-content * {
+    visibility: visible; /* Make only the cv-content and its children visible */
+  }
+
+  #cv-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
