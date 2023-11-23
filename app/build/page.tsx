@@ -7,11 +7,7 @@ import  { useState } from 'react'
 
 const page = () => {
   return (
-    <div>
-    <div className="p-3 w-2/3 mx-auto container">
       <BuildModal />
-      </div>
-    </div>
   )
 }
 

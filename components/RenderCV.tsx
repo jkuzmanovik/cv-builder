@@ -6,7 +6,6 @@ const RenderCV = () => {
   const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
-    // Replace this with your API endpoint to fetch the HTML page
     fetch(
       "https://y3venvn9v6.execute-api.us-east-1.amazonaws.com/dev/get-user/1234"
     )
@@ -30,8 +29,10 @@ const RenderCV = () => {
 
   return (
     <>
-      <Button onClick={printDocument}>Print as PDF</Button>
+    <div>
+      <Button onClick={printDocument} className="text-5xl flex  mx-auto mt-4 p-4">Print as PDF</Button>
       <div dangerouslySetInnerHTML={{ __html: htmlContent }} id="cv-content"/>
+    </div>
     </>
   );
 };

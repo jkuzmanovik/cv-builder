@@ -60,22 +60,24 @@ const Projects = () => {
 
   return (
     <>
-      <h1 className="text-xl pb-5 font-medium">Projects</h1>
-      {projects.map((project: any, index: any) => (
-        <Project
-          key={index}
-          id={index}
-          project={project}
-          setProjects={setProjects}
-        />
-      ))}
-      <div className="flex justify-end gap-2">
-        <Button onClick={handleBack}>Back</Button>
-        <Button onClick={handleNext}>Next</Button>
-      </div>
-      <div className="flex gap-2">
-        <Button onClick={increment}> + Project </Button>
-        {counter > 1 && <Button onClick={decrement}> - Project </Button>}
+      <div className="p-3 w-2/3 mx-auto container">
+        <h1 className="text-xl pb-5 font-medium">Projects</h1>
+        {projects.map((project: any, index: any) => (
+          <Project
+            key={index}
+            id={index}
+            project={project}
+            setProjects={setProjects}
+          />
+        ))}
+        <div className="flex justify-end gap-2">
+          <Button onClick={handleBack}>Back</Button>
+          <Button onClick={handleNext}>Next</Button>
+        </div>
+        <div className="flex gap-2">
+          <Button onClick={increment}> + Project </Button>
+          {counter > 1 && <Button onClick={decrement}> - Project </Button>}
+        </div>
       </div>
     </>
   );

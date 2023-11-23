@@ -42,39 +42,41 @@ const Educations = () => {
         courses: "",
       },
     ]);
-  }
+  };
 
   const decrement = () => {
     setCounter(counter - 1);
     setEducation(education.slice(0, -1));
-  }
+  };
   const handleNext = () => {
     formStore.addField("education", education);
     stepStore.increaseStep();
-  }
+  };
 
   const handleBack = () => {
     stepStore.decreaseStep();
-  }
+  };
 
   return (
     <>
-      <h1 className="text-xl pb-5 font-medium">Education</h1>
-      {education.map((education:any, index:any) => (
-        <Education
-          key={index}
-          id={index}
-          education={education}
-          setEducation={setEducation}
+      <div className="p-3 w-2/3 mx-auto container">
+        <h1 className="text-xl pb-5 font-medium">Education</h1>
+        {education.map((education: any, index: any) => (
+          <Education
+            key={index}
+            id={index}
+            education={education}
+            setEducation={setEducation}
           />
-      ))}
-      <div className="flex justify-end gap-2">
-        <Button onClick={handleBack}>Back</Button>
-        <Button onClick={handleNext}>Next</Button>
-      </div>
-      <div className="flex gap-2">
-        <Button onClick={increment}> + Education </Button>
-        {counter > 1 && <Button onClick={decrement}> - Education </Button>}
+        ))}
+        <div className="flex justify-end gap-2">
+          <Button onClick={handleBack}>Back</Button>
+          <Button onClick={handleNext}>Next</Button>
+        </div>
+        <div className="flex gap-2">
+          <Button onClick={increment}> + Education </Button>
+          {counter > 1 && <Button onClick={decrement}> - Education </Button>}
+        </div>
       </div>
     </>
   );

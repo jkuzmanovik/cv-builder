@@ -48,22 +48,24 @@ const Languages = () => {
 
   return (
     <>
-      <h1 className="text-xl pb-5 font-medium">Languages</h1>
-      {languages.map((language: any, index: any) => (
-        <Language
-          key={index}
-          id={index}
-          language={language}
-          setLanguages={setLanguages}
-        />
-      ))}
-      <div className="flex justify-end gap-2">
-        <Button onClick={handleBack}>Back</Button>
-        <Button onClick={handleNext}>Next</Button>
-      </div>
-      <div className="flex gap-2">
-        <Button onClick={increment}> + Language </Button>
-        {counter > 1 && <Button onClick={decrement}> - Language </Button>}
+      <div className="p-3 w-2/3 mx-auto container">
+        <h1 className="text-xl pb-5 font-medium">Languages</h1>
+        {languages.map((language: any, index: any) => (
+          <Language
+            key={index}
+            id={index}
+            language={language}
+            setLanguages={setLanguages}
+          />
+        ))}
+        <div className="flex justify-end gap-2">
+          <Button onClick={handleBack}>Back</Button>
+          <Button onClick={handleNext}>Next</Button>
+        </div>
+        <div className="flex gap-2">
+          <Button onClick={increment}> + Language </Button>
+          {counter > 1 && <Button onClick={decrement}> - Language </Button>}
+        </div>
       </div>
     </>
   );

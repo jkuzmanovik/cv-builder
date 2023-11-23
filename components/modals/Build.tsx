@@ -6,7 +6,9 @@ const Build = () => {
     const data = formStore.json;
   return (
     <>
+    <div className="p-3 w-2/3 mx-auto container">
     <h1>Rabotam</h1>
+    </div>
     </>
   );
 };

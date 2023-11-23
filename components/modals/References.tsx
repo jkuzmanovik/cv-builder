@@ -48,22 +48,24 @@ const References = () => {
 
   return (
     <>
-      <h1 className="text-xl pb-5 font-medium">References</h1>
-      {references.map((reference: any, index: any) => (
-        <Reference
-          key={index}
-          id={index}
-          reference={reference}
-          setReferences={setReferences}
-        />
-      ))}
-      <div className="flex justify-end gap-2">
-        <Button onClick={handleBack}>Back</Button>
-        <Button onClick={handleNext}>Next</Button>
-      </div>
-      <div className="flex gap-2">
-        <Button onClick={increment}> + Reference </Button>
-        {counter > 1 && <Button onClick={decrement}> - Reference </Button>}
+      <div className="p-3 w-2/3 mx-auto container">
+        <h1 className="text-xl pb-5 font-medium">References</h1>
+        {references.map((reference: any, index: any) => (
+          <Reference
+            key={index}
+            id={index}
+            reference={reference}
+            setReferences={setReferences}
+          />
+        ))}
+        <div className="flex justify-end gap-2">
+          <Button onClick={handleBack}>Back</Button>
+          <Button onClick={handleNext}>Next</Button>
+        </div>
+        <div className="flex gap-2">
+          <Button onClick={increment}> + Reference </Button>
+          {counter > 1 && <Button onClick={decrement}> - Reference </Button>}
+        </div>
       </div>
     </>
   );

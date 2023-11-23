@@ -17,6 +17,8 @@ import useStepStore from "@/hooks/step-hook";
 import { useEffect, useState } from "react";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
+import BuildModal from "./BuildModal";
+import RenderCV from "../RenderCV";
 
 const formSchema = z.object({
   coverLetter: z.string().min(3).max(1000),
@@ -29,48 +31,10 @@ const CoverLetter = () => {
     console.log(formStore.json);
   }, [formStore.json]);
 
-  const handleSubmit = (data: z.infer<typeof formSchema>) => {
-    formStore.addField("coverLetter", data);
-  };
-
-  const handleBuild = () => {
-    stepStore.increaseStep();
-  }
-
-  const handleBack = () => {
-    stepStore.decreaseStep();
-  };
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      coverLetter: "",
-    },
-  });
-
   return (
     <>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(handleSubmit)}>
-          <FormField
-            control={form.control}
-            name="coverLetter"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Cover Letter</FormLabel>
-                <FormControl>
-                  <Textarea placeholder="Cover Letter" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <div className="flex justify-end">
-            <Button type="submit">Confirm</Button>
-          </div>
-        </form>
-      </Form>
-      <Button onClick={handleBuild}>Build</Button>
-      <Button onClick={handleBack}>Back</Button>
+    <Button onClick={() => stepStore.decreaseStep()} className="text-4xl m-5">Go back</Button>
+      <RenderCV />
     </>
   );
 };
