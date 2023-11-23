@@ -1,3 +1,4 @@
+import { UserButton } from "@clerk/nextjs";
 import React from "react";
 
 const Header = () => {
@@ -12,8 +13,8 @@ const Header = () => {
         </div>
       </div>
       <div className="flex justify-start gap-3">
-        <div>Sign in</div>
-        <div>Locale</div>
+        <div>My profile</div>
+        <UserButton />
       </div>
     </div>
   );

@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import useFormStore from "@/hooks/form-hook";
+import { currentUser } from "@clerk/nextjs";
 
-const RenderCV = () => {
+const  RenderCV =  () => {
   const [htmlContent, setHtmlContent] = useState("");
   const form = useFormStore();
 
