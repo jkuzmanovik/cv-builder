@@ -13,7 +13,7 @@ const Header = () => {
         <Link href={"/"} className="text-2xl">Resume builder </Link>
         <div className="flex justify-between gap-5 text-lg ">
           <Link href={"/build"}>Build CV</Link>
-          <div>Upload</div>
+          <Link href={"/mycv"}>My CV</Link>
           <div>Source code</div>
         </div>
       </div>
