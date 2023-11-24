@@ -3,11 +3,12 @@
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import useFormStore from "@/hooks/form-hook";
-import { currentUser } from "@clerk/nextjs";
+import { auth, useAuth } from "@clerk/nextjs";
 
-const  RenderCV =  () => {
+const RenderCV = () => {
   const [htmlContent, setHtmlContent] = useState("");
   const form = useFormStore();
+  const { userId } = useAuth();
 
   useEffect(() => {
     console.log(htmlContent);
@@ -15,8 +16,24 @@ const  RenderCV =  () => {
 
   const handleSubmit = async () => {
     try {
+      if (userId) {
+        const resposne2 = await fetch(
+          `https://0mfnypwgu3.execute-api.us-east-1.amazonaws.com/dev/save-user-cv/${userId}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(form.json), // Replace 'form.json' with your form data
+          }
+        );
+        if(resposne2.ok){
+          console.log("User CV saved")
+        }
+      }
+
       const response = await fetch(
-        "https://rs6x4t44bi.execute-api.us-east-1.amazonaws.com/dev/createResume",
+        "https://0mfnypwgu3.execute-api.us-east-1.amazonaws.com/dev/createResume",
         {
           method: "POST",
           headers: {

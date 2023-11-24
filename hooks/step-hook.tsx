@@ -14,8 +14,7 @@ enum STEPS {
     INTERESTS = 10,
     REFERENCES = 11,
     PROJECTS = 12,
-    COVERLETTER = 13,
-    BUILD = 14,
+    RENDER = 13,
 }
 
 type StepState = {
@@ -25,7 +24,7 @@ type StepState = {
 };
 
 const useStepStore = create<StepState>((set) => ({
-    currentStep: STEPS.BASICS,
+    currentStep: STEPS.PROJECTS,
     increaseStep: () => set((state) => ({ currentStep: state.currentStep + 1 })),
     decreaseStep: () => set((state) => ({ currentStep: state.currentStep - 1 })),
 }));

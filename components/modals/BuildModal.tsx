@@ -14,9 +14,9 @@ import Languages from './Languages';
 import Interests from './Interests';
 import References from './References';
 import Projects from './Projects';
-import CoverLetter from './CoverLetter';
 import Works from './Works';
-import Build from './Build';
+import RenderCV from '../RenderCV';
+import Render from './Render';
 enum STEPS {
   BASICS = 0,
   PROFILES = 1,
@@ -31,8 +31,7 @@ enum STEPS {
   INTERESTS = 10,
   REFERENCES = 11,
   PROJECTS = 12,
-  COVERLETTER = 13,
-  BUILD = 14,
+  RENDER = 13,
 }
 const BuildModal = () => {
     const stepStore = useStepStore();
@@ -76,13 +75,9 @@ const BuildModal = () => {
     if(stepStore.currentStep === STEPS.PROJECTS) {
         bodyContent = <Projects />
     }
-    if(stepStore.currentStep === STEPS.COVERLETTER) {
-        bodyContent = <CoverLetter />
+    if(stepStore.currentStep === STEPS.RENDER) {
+        bodyContent = <Render />
     }
-    if(stepStore.currentStep === STEPS.BUILD) {
-        bodyContent = <Build />
-    }
-
 
   return (
     <>
