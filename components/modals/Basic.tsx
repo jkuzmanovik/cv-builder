@@ -17,7 +17,6 @@ import { Button } from "../ui/button";
 import useFormStore from "@/hooks/form-hook";
 import { Textarea } from "../ui/textarea";
 import useStepStore from "@/hooks/step-hook";
-
 const formSchema = z.object({
   name: z.string(),
   label: z.string(),
@@ -87,6 +86,12 @@ const Basic = () => {
   const handleNext = () => {
     stepStore.increaseStep();
   };
+
+  const hadneNewCV = () => {
+    console.log("rabotam?")
+    formStore.json = {};
+    window.location.reload();
+  }
 
   return (
     <div className="p-3 w-2/3 mx-auto container">
@@ -246,6 +251,11 @@ const Basic = () => {
           </div>
           <div className="flex justify-between">
             <Button type="submit">Confirm</Button>
+            {
+              formStore.json.basics ? (
+                <Button onClick={hadneNewCV}>Start New CV</Button>
+              ) : null
+            }
             <Button onClick={handleNext}>Next</Button>
           </div>
         </form>
