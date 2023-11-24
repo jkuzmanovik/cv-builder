@@ -1,18 +1,7 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
 import * as z from "zod";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import useFormStore from "@/hooks/form-hook";
 import useStepStore from "@/hooks/step-hook";
 import { useEffect, useState } from "react";
@@ -29,20 +18,23 @@ const Render = () => {
   const formStore = useFormStore();
   const stepStore = useStepStore();
   useEffect(() => {
-    console.log("Vlagam")
-    if(!formStore.json.id){
-      formStore.addField("id", uuidv4())
+    if (!formStore.json.id) {
+      formStore.addField("id", uuidv4());
     }
-    console.log(formStore.json)
-  },[formStore]);
-
-
+    console.log(formStore.json);
+  }, [formStore]);
 
   return (
     <>
-    <Button onClick={() => stepStore.decreaseStep()} className="text-4xl m-5">Go back</Button>
-    {/* <Button onClick={saveCV} className="text-4xl m-5">Save</Button> */}
-      <RenderCV />
+      <div>
+        <Button
+          onClick={() => stepStore.decreaseStep()}
+          className="text-2xl m-5 flex justify-center"
+        >
+          Go back
+        </Button>
+        <RenderCV />
+      </div>
     </>
   );
 };

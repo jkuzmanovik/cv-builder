@@ -4,15 +4,13 @@ import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import useFormStore from "@/hooks/form-hook";
 import { auth, useAuth } from "@clerk/nextjs";
+import { set } from "date-fns";
 
 const RenderCV = () => {
   const [htmlContent, setHtmlContent] = useState("");
+  const [isOk, setIsOk] = useState(false);
   const form = useFormStore();
   const { userId } = useAuth();
-
-  useEffect(() => {
-    console.log(htmlContent);
-  }, [htmlContent]);
 
   const handleSubmit = async () => {
     try {
@@ -24,11 +22,11 @@ const RenderCV = () => {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify(form.json), // Replace 'form.json' with your form data
+            body: JSON.stringify(form.json),
           }
         );
-        if(resposne2.ok){
-          console.log("User CV saved")
+        if (resposne2.ok) {
+          console.log("User CV saved");
         }
       }
 
@@ -39,17 +37,19 @@ const RenderCV = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(form.json), // Replace 'form.json' with your form data
+          body: JSON.stringify(form.json),
         }
       );
 
       if (response.ok) {
         const html = await response.text();
         setHtmlContent(html);
+        setIsOk(true);
       } else {
         console.error("Failed to fetch HTML content");
       }
     } catch (error) {
+      setIsOk(false);
       console.error("Error fetching HTML content:", error);
     }
   };
@@ -62,18 +62,23 @@ const RenderCV = () => {
   return (
     <>
       <div>
-        <Button
-          onClick={printDocument}
-          className="text-5xl flex mx-auto mt-4 p-4"
-        >
-          Print as PDF
-        </Button>
-        <Button
-          onClick={handleSubmit}
-          className="text-3xl flex mx-auto mt-4 p-2"
-        >
-          Submit and Generate CV
-        </Button>
+        {isOk ? (
+          <Button
+            onClick={printDocument}
+            className="text-5xl flex mx-auto mt-4 p-4"
+          >
+            Print as PDF
+          </Button>
+        ) : null}
+        {!isOk ? (
+          <Button
+            onClick={handleSubmit}
+            className="text-3xl flex mx-auto mt-4 p-2"
+          >
+            Save and Generate CV
+          </Button>
+        ) : null}
+
         <div
           dangerouslySetInnerHTML={{ __html: htmlContent }}
           id="cv-content"
