@@ -32,10 +32,10 @@ interface CertificateProps {
     }
 
     const formSchema = z.object({
-        name: z.string().min(3).max(20),
+        name: z.string(),
         date: z.date(),
         website: z.string().url(),
-        issuer: z.string().min(3).max(20),
+        issuer: z.string(),
     });
 
 
@@ -123,8 +123,8 @@ interface CertificateProps {
               name="website"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>website</FormLabel>
-                  <Input {...field} placeholder="website" />
+                  <FormLabel>Website</FormLabel>
+                  <Input {...field} placeholder="Website" />
                   <FormMessage>
                     {form.formState.errors.website?.message}
                   </FormMessage>

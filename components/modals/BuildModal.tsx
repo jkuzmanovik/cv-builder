@@ -78,7 +78,6 @@ const BuildModal = () => {
     if(stepStore.currentStep === STEPS.RENDER) {
         bodyContent = <Render />
     }
-
   return (
     <>
     {bodyContent}

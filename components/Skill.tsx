@@ -32,8 +32,8 @@ interface SkillProps {
 }
 
 const formSchema = z.object({
-  name: z.string().min(3).max(20),
-  level: z.string().min(3).max(20),
+  name: z.string(),
+  level: z.string(),
   keywords: z.string(),
 });
 

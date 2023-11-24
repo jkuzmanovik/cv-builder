@@ -33,11 +33,11 @@ interface PublicationProps {
 }
 
 const formSchema = z.object({
-  name: z.string().min(3).max(20),
-  publisher: z.string().min(3).max(20),
+  name: z.string(),
+  publisher: z.string(),
   releaseDate: z.date(),
   website: z.string().url(),
-  summary: z.string().min(3).max(20),
+  summary: z.string(),
 });
 
 const Publication = ({
@@ -102,7 +102,7 @@ const Publication = ({
               name="releaseDate"
               render={({ field }) => (
                 <FormItem className="flex flex-col">
-                  <FormLabel>releaseDate</FormLabel>
+                  <FormLabel>Release date</FormLabel>
                   <Popover>
                     <PopoverTrigger asChild>
                       <FormControl>
@@ -143,8 +143,8 @@ const Publication = ({
               name="website"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>website</FormLabel>
-                  <Input {...field} placeholder="website" />
+                  <FormLabel>Website</FormLabel>
+                  <Input {...field} placeholder="Website" />
                   <FormMessage>
                     {form.formState.errors.website?.message}
                   </FormMessage>

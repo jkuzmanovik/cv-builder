@@ -37,13 +37,13 @@ interface EducationProps {
 }
 
 const formSchema = z.object({
-  institution: z.string().min(3).max(20),
+  institution: z.string(),
   website: z.string().url(),
-  area: z.string().min(3).max(20),
-  studyType: z.string().min(3).max(20),
+  area: z.string(),
+  studyType: z.string(),
   startDate: z.date(),
   endDate: z.date(),
-  score: z.string().max(2),
+  score: z.string(),
   courses: z.string(),
 });
 
@@ -98,8 +98,8 @@ const Education = ({ id, education, setEducation }: EducationProps) => {
               name="website"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>website</FormLabel>
-                  <Input {...field} />
+                  <FormLabel>Website</FormLabel>
+                  <Input {...field} placeholder="Website" />
                   <FormMessage>
                     {form.formState.errors.website?.message}
                   </FormMessage>

@@ -25,8 +25,8 @@ interface ProfileProps {
 }
 
 const formSchema = z.object({
-  network: z.string().min(3).max(20),
-  username: z.string().min(3).max(20),
+  network: z.string(),
+  username: z.string(),
   website: z.string(),
 });
 
@@ -83,9 +83,9 @@ const Profile = ({ id, profile,setProfies }: ProfileProps) => {
             name="website"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>website</FormLabel>
+                <FormLabel>Website</FormLabel>
                 <FormControl>
-                  <Input placeholder="website" {...field} />
+                  <Input placeholder="Website" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

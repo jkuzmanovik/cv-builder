@@ -32,9 +32,9 @@ interface AwardProps {
 }
 
 const formSchema = z.object({
-  title: z.string().min(3).max(20),
+  title: z.string(),
   date: z.date(),
-  awarder: z.string().min(3).max(20),
+  awarder: z.string(),
   summary: z.string(),
 });
 

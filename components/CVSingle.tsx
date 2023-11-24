@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import React from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import useStepStore from "@/hooks/step-hook";
 
 interface CVSingleProps {
   cv: any;
@@ -10,9 +11,11 @@ interface CVSingleProps {
 
 const CVSingle: React.FC<CVSingleProps> = ({ cv }) => {
     const formStore = useFormStore();
+    const stepStore = useStepStore()
     const handleEdit = () => {
         console.log("I am clicked")
         formStore.json = cv;
+        stepStore.currentStep = 0;
         console.log(formStore.json)
     }
 

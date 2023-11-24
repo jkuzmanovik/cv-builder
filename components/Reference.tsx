@@ -30,8 +30,8 @@ interface ReferenceProps {
   setReferences: (reference: any) => void;
 }
 const formSchema = z.object({
-  name: z.string().min(3).max(20),
-  reference: z.string().min(3).max(20),
+  name: z.string(),
+  reference: z.string(),
 });
 
 const Reference = ({ id, reference, setReferences }: ReferenceProps) => {

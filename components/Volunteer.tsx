@@ -36,8 +36,8 @@ interface VolunteerProps {
 }
 
 const formSchema = z.object({
-  organization: z.string().min(3).max(20),
-  position: z.string().min(3).max(20),
+  organization: z.string(),
+  position: z.string(),
   website: z.string().url(),
   startDate: z.date(),
   endDate: z.date(),
@@ -106,9 +106,9 @@ const Volunteer = ({ id, volunteer, setVolunteer }: VolunteerProps) => {
               name="website"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>website</FormLabel>
+                  <FormLabel>Website</FormLabel>
                   <FormControl>
-                    <Input placeholder="website" {...field} />
+                    <Input placeholder="Website" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

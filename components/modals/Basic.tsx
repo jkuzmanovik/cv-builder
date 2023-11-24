@@ -22,14 +22,14 @@ const formSchema = z.object({
   name: z.string(),
   label: z.string(),
   email: z.string().email(),
-  phone: z.string().min(3).max(15),
+  phone: z.string(),
   website: z.string(),
-  summary: z.string().min(3).max(200),
+  summary: z.string(),
   adress: z.string().min(3).max(100),
-  postalCode: z.string().min(3).max(100),
-  city: z.string().min(3).max(100),
-  countryCode: z.string().min(3).max(100),
-  region: z.string().min(3).max(100),
+  postalCode: z.string(),
+  city: z.string(),
+  countryCode: z.string(),
+  region: z.string(),
 });
 
 const Basic = () => {

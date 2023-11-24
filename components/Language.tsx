@@ -31,8 +31,8 @@ interface LanguageProps {
 }
 
 const formSchema = z.object({
-  language: z.string().min(3).max(20),
-  fluency: z.string().min(3).max(20),
+  language: z.string(),
+  fluency: z.string(),
 });
 
 const Language = ({ id, language, setLanguages }: LanguageProps) => {

@@ -39,8 +39,8 @@ interface ProjectProps {
 }
 
 const formSchema = z.object({
-  name: z.string().min(3).max(20),
-  description: z.string().min(3).max(20),
+  name: z.string(),
+  description: z.string(),
   highlights: z.string(),
   keywords: z.string(),
   startDate: z.date(),
@@ -228,8 +228,8 @@ const Project = ({ id, project, setProjects }: ProjectProps) => {
               name="website"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>website</FormLabel>
-                  <Input {...field} placeholder="website" />
+                  <FormLabel>Website</FormLabel>
+                  <Input {...field} placeholder="Website" />
                   <FormMessage>
                     {form.formState.errors.website?.message}
                   </FormMessage>
