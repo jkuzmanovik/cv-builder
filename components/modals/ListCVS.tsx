@@ -5,7 +5,7 @@ import CVSingle from "../CVSingle";
 
 const ListCVS = () => {
   const { userId } = useAuth();
-  const [cvs, setCvs] = useState({});
+  const [cvs, setCvs] = useState({} as any);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,7 +30,7 @@ const ListCVS = () => {
 
   return (
     <>
-    {Object.keys(cvs).map((key) => (
+    {Object.keys(cvs).map((key : any) => (
        <CVSingle key={key} cv={cvs[key]} />
       ))  
     }

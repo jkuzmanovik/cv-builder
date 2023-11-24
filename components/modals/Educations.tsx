@@ -12,7 +12,18 @@ const Educations = () => {
   const stepStore = useStepStore();
   const [education, setEducation] = useState(
     formStore.json.education
-      ? formStore.json.education
+      ? [
+        {
+          institution: formStore.json.education[0].institution,
+          website: formStore.json.education[0].website,
+          area: formStore.json.education[0].area,
+          studyType: formStore.json.education[0].studyType,
+          startDate: new Date( formStore.json.education[0].startDate),
+          endDate: new Date( formStore.json.education[0].endDate),
+          score: formStore.json.education[0].score,
+          courses: formStore.json.education[0].courses,
+        }
+      ]
       : [
           {
             institution: "",

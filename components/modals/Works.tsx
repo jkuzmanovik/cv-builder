@@ -14,7 +14,17 @@ const Works = () => {
   const stepStore = useStepStore();
   const [work, setWork] = useState(
     formStore.json.work
-      ? formStore.json.work
+      ? [
+        {
+          name: formStore.json.work[0].name,
+          position: formStore.json.work[0].position,
+          website: formStore.json.work[0].website,
+          startDate: new Date( formStore.json.work[0].startDate),
+          endDate: new Date( formStore.json.work[0].endDate),
+          summary: formStore.json.work[0].summary,
+          highlights: formStore.json.work[0].highlights,
+        }
+      ]
       : [
           {
             name: "",

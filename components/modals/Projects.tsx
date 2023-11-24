@@ -14,7 +14,17 @@ const Projects = () => {
 
   const [projects, setProjects] = useState(
     formStore.json.projects
-      ? formStore.json.projects
+      ? [
+        {
+          name: formStore.json.projects[0].name,
+          description: formStore.json.projects[0].description,
+          highlights: formStore.json.projects[0].highlights,
+          keywords: formStore.json.projects[0].keywords,
+          startDate: new Date( formStore.json.projects[0].startDate),
+          endDate: new Date( formStore.json.projects[0].endDate),
+          website: formStore.json.projects[0].website,
+        }
+      ]
       : [
           {
             name: "",

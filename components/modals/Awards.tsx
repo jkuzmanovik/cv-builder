@@ -12,7 +12,14 @@ const Awards = () => {
   const stepStore = useStepStore();
   const [awards, setAwards] = useState(
     formStore.json.awards
-      ? formStore.json.awards
+      ? [
+        {
+          title: formStore.json.awards[0].title,
+          date: new Date(formStore.json.awards[0].date),
+          awarder: formStore.json.awards[0].awarder,
+          summary: formStore.json.awards[0].summary,
+        }
+      ]
       : [
           {
             title: "",

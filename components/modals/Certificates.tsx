@@ -13,7 +13,14 @@ const Certificates = () => {
 
   const [certificates, setCertificates] = useState(
     formStore.json.certificates
-      ? formStore.json.certificates
+      ? [
+        {
+          name: formStore.json.certificates[0].name,
+          date: new Date( formStore.json.certificates[0].date),
+          website: formStore.json.certificates[0].website,
+          issuer: formStore.json.certificates[0].issuer,
+        }
+      ]
       : [
           {
             name: "",

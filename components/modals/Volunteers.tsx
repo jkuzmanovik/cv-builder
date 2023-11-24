@@ -11,7 +11,17 @@ const Volunteers = () => {
   const stepStore = useStepStore();
   const [volunteer, setVolunteer] = useState(
     formStore.json.volunteer
-      ? formStore.json.volunteer
+      ? [
+        {
+          organization: formStore.json.volunteer[0].organization,
+          position: formStore.json.volunteer[0].position,
+          website: formStore.json.volunteer[0].website,
+          startDate: new Date( formStore.json.volunteer[0].startDate),
+          endDate: new Date( formStore.json.volunteer[0].endDate),
+          summary: formStore.json.volunteer[0].summary,
+          highlights: formStore.json.volunteer[0].highlights,
+        }
+      ]
       : [
           {
             organization: "",

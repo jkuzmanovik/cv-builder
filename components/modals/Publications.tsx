@@ -13,7 +13,15 @@ const Publications = () => {
 
   const [publications, setPublications] = useState(
     formStore.json.publications
-      ? formStore.json.publications
+      ? [
+        {
+          name: formStore.json.publications[0].name,
+          publisher: formStore.json.publications[0].publisher,
+          releaseDate: new Date(formStore.json.publications[0].releaseDate),
+          website: formStore.json.publications[0].website,
+          summary: formStore.json.publications[0].summary,
+        }
+      ]
       : [
           {
             name: "",
