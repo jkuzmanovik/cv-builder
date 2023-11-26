@@ -30,11 +30,14 @@ const ListCVS = () => {
 
   return (
     <>
+    <div className="mx-auto m-2">
+        <h1 className="m-auto text-2xl p-2  ">List of all your CVS</h1>
     {cvs? (Object.keys(cvs).map((key : any) => (
        <CVSingle key={key} cv={cvs[key]} />
       )) )
-    : (<h1>You dont have any CVs yet</h1>)
+    : (<h1 className="flex justify-center mt-4">You dont have any CVs yet</h1>)
     }
+    </div>
     </>
   )
 };

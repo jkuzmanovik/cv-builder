@@ -44,7 +44,6 @@ const CVSingle: React.FC<CVSingleProps> = ({ cv }) => {
   return (
     <>
       <div>
-        <h1 className="mx-auto text-2xl m-2 p-2 ">List of all your CVS</h1>
         <Table>
           <TableHeader>
             <TableRow>

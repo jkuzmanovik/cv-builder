@@ -3,14 +3,12 @@ import Link from "next/link";
 import React from "react";
 
 const Header = () => {
-  const {userId} = auth();
-
 
 
   return (
     <div className="flex justify-between h-20 w-full text-white bg-cyan-700 p-6">
       <div className="flex justify-between gap-8">
-        <Link href={"/"} className="text-2xl">Resume builder </Link>
+        <Link href={"/"} className="text-2xl">CV Builder</Link>
         <div className="flex justify-between gap-5 text-lg ">
           <Link href={"/build"}>Build CV</Link>
           <Link href={"/mycv"}>My CV</Link>
