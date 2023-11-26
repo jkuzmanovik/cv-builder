@@ -19,7 +19,7 @@ interface ProfileProps {
   profile: {
     network: string;
     username: string;
-    website: string;
+    url: string;
   };
   setProfies: any;
 }
@@ -36,7 +36,7 @@ const Profile = ({ id, profile,setProfies }: ProfileProps) => {
     defaultValues:{
       network: profile.network,
       username: profile.username,
-      website: profile.website
+      website: profile.url
     } 
   });
 

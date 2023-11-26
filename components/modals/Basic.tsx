@@ -24,7 +24,7 @@ const formSchema = z.object({
   phone: z.string(),
   website: z.string(),
   summary: z.string(),
-  adress: z.string().min(3).max(100),
+  address: z.string().min(3).max(100),
   postalCode: z.string(),
   city: z.string(),
   countryCode: z.string(),
@@ -45,7 +45,7 @@ const Basic = () => {
           phone: formStore.json.basics.phone,
           website: formStore.json.basics.website,
           summary: formStore.json.basics.summary,
-          adress: formStore.json.basics.location.adress,
+          address: formStore.json.basics.location.address,
           postalCode: formStore.json.basics.location.postalCode,
           city: formStore.json.basics.location.city,
           countryCode: formStore.json.basics.location.countryCode,
@@ -58,7 +58,7 @@ const Basic = () => {
           phone: "",
           website: "",
           summary: "",
-          adress: "",
+          address: "",
           postalCode: "",
           city: "",
           countryCode: "",
@@ -74,7 +74,7 @@ const Basic = () => {
       website: data.website,
       summary: data.summary,
       location: {
-        adress: data.adress,
+        address: data.address,
         postalCode: data.postalCode,
         city: data.city,
         countryCode: data.countryCode,
@@ -184,7 +184,7 @@ const Basic = () => {
             <div className="grid grid-cols-2 gap-3">
               <FormField
                 control={form.control}
-                name="adress"
+                name="address"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Adress</FormLabel>

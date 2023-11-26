@@ -67,7 +67,7 @@ const RenderCV = () => {
             onClick={printDocument}
             className="text-5xl flex mx-auto mt-4 p-4"
           >
-            Print as PDF
+            Download as PDF
           </Button>
         ) : null}
         {!isOk ? (

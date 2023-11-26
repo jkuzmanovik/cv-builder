@@ -58,7 +58,7 @@ const CVSingle: React.FC<CVSingleProps> = ({ cv }) => {
               <TableCell className="font-medium"> {cv.basics?.name} </TableCell>
               <TableCell>{cv.basics?.phone}</TableCell>
               <TableCell>{cv.basics?.email}</TableCell>
-              <TableCell className="text-right">{cv.basaics?.label}</TableCell>
+              <TableCell className="text-right">{cv.basics?.label}</TableCell>
               <TableCell className="text-right flex justify-center items-center gap-3 mt-4">
                 <Link href={"/build"}>
                   <Button onClick={handleEdit}>Edit</Button>
