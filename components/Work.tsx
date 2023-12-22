@@ -36,12 +36,12 @@ interface WorkProps {
 }
 
 const formSchema = z.object({
-  name: z.string().min(3).max(20),
-  position: z.string().min(3).max(20),
+  name: z.string(),
+  position: z.string(),
   website: z.string(),
   startDate: z.date(),
   endDate: z.date(),
-  summary: z.string().min(3).max(20),
+  summary: z.string(),
   highlights: z.string(),
 });
 
